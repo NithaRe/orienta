@@ -8,7 +8,6 @@
   - type: Sprite
     noRot: true
     drawdepth: Mobs
-  - type: MobCollision
   - type: Physics
     bodyType: KinematicController
   - type: Fixtures
@@ -42,23 +41,9 @@
   - type: CameraRecoil
   - type: MindContainer
   - type: MovementSpeedModifier
-  - type: TTS # Corvax-TTS
-  - type: RequireProjectileTarget
-    active: False
-  - type: LanguageSpeaker
-  - type: LanguageKnowledge #backmen: languages
-    speaks:
-    - SpaceMob
-    understands:
-    - TauCetiBasic
-    - SpaceMob
-
-- type: entity
-  save: false
-  id: MobPolymorphable
-  abstract: true
-  components:
   - type: Polymorphable
+  - type: StatusIcon
+  - type: TTS # Stories-TTS
 
 # Used for mobs that have health and can take damage.
 - type: entity
@@ -113,8 +98,6 @@
     - Piercing
     - Heat
     - Shock
-    - Cold
-    - Caustic
   - type: DamageOnHighSpeedImpact
     damage:
       types:
@@ -166,7 +149,7 @@
     sweatHeatRegulation: 2000
     shiveringHeatRegulation: 2000
     normalBodyTemperature: 310.15
-    thermalRegulationTemperatureThreshold: 2
+    thermalRegulationTemperatureThreshold: 25
   - type: MovedByPressure
 
 # Used for mobs that require regular atmospheric conditions.
@@ -182,7 +165,7 @@
     sweatHeatRegulation: 500
     shiveringHeatRegulation: 500
     normalBodyTemperature: 310.15
-    thermalRegulationTemperatureThreshold: 2
+    thermalRegulationTemperatureThreshold: 25
   - type: Temperature
     heatDamageThreshold: 325
     coldDamageThreshold: 260
@@ -210,7 +193,7 @@
     canResistFire: true
     damage: #per second, scales with number of fire 'stacks'
       types:
-        Heat: 0.75
+        Heat: 1.5
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Generic_mob_burning

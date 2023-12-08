@@ -86,29 +86,6 @@
       gender: female
 
 - type: entity
-  name: real mouse
-  parent: MobCorgiIan
-  id: MobCorgiMouse
-  description: It's 100% a real hungry mouse.
-  components:
-  - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: real_mouse
-  - type: DamageStateVisuals
-    states:
-      Alive:
-        Base: real_mouse
-      Critical:
-        Base: real_mouse_dead
-      Dead:
-        Base: real_mouse_dead
-  - type: Grammar
-    attributes:
-      proper: true
-      gender: female
-
-- type: entity
   name: Puppy Ian
   parent: MobCorgiPuppy
   id: MobCorgiIanPup
@@ -123,8 +100,6 @@
     - id: FoodMeatCorgi
       amount: 2
     - id: MaterialHideCorgi
-  - type: StealTarget
-    stealGroup: AnimalIan
 
 - type: entity
   name: Runtime
@@ -146,8 +121,6 @@
     tags:
     - CannotSuicide
     - VimPilot
-  - type: StealTarget
-    stealGroup: AnimalNamedCat
 
 - type: entity
   name: Exception
@@ -166,8 +139,6 @@
     tags:
     - CannotSuicide
     - VimPilot
-  - type: StealTarget
-    stealGroup: AnimalNamedCat
 
 - type: entity
   name: Floppa
@@ -193,8 +164,6 @@
     tags:
     - CannotSuicide
     - VimPilot
-  - type: StealTarget
-    stealGroup: AnimalNamedCat
 
 - type: entity
   name: Bandito
@@ -213,7 +182,7 @@
 
 - type: entity
   name: Bingus
-  parent: [SimpleMobBase, StripableInventoryBase]
+  parent: SimpleMobBase
   id: MobBingus
   description: Bingus my beloved...
   components:
@@ -238,6 +207,12 @@
   - type: Inventory
     speciesId: cat
     templateId: pet
+  - type: InventorySlots
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -266,11 +241,11 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalNamedCat
+    stealGroup: AnimalBingus
 
 - type: entity
   name: McGriff
-  parent: [SimpleMobBase, StripableInventoryBase]
+  parent: SimpleMobBase
   id: MobMcGriff
   description: This dog can tell something smells around here, and that something is CRIME!
   components:
@@ -295,6 +270,12 @@
   - type: Inventory
     speciesId: puppy
     templateId: pet
+  - type: InventorySlots
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -307,16 +288,8 @@
     spawned:
     - id: FoodMeat
       amount: 2
-#  - type: ReplacementAccent
-#    accent: dog
-  - type: LanguageSpeaker
-    currentLanguage: TauCetiBasic
-  - type: LanguageKnowledge #backmen: languages
-    speaks:
-    - Dog
-    understands:
-    - Dog
-    - TauCetiBasic
+  - type: ReplacementAccent
+    accent: dog
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-dog
@@ -328,9 +301,6 @@
     attributes:
       proper: true
       gender: male
-  - type: Speech
-    speechVerb: Canine
-    speechSounds: Dog
   - type: Tag
     tags:
     - CannotSuicide
@@ -374,7 +344,7 @@
 
 - type: entity
   name: Walter
-  parent: [SimpleMobBase, StripableInventoryBase]
+  parent: SimpleMobBase
   id: MobWalter
   description: He likes chems and treats. Walter.
   components:
@@ -399,6 +369,12 @@
   - type: Inventory
     speciesId: dog
     templateId: pet
+  - type: InventorySlots
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -411,16 +387,8 @@
     spawned:
     - id: FoodMeat
       amount: 3
-#  - type: ReplacementAccent
-#    accent: dog
-  - type: LanguageSpeaker
-    currentLanguage: TauCetiBasic
-  - type: LanguageKnowledge #backmen: languages
-    speaks:
-    - Dog
-    understands:
-    - Dog
-    - TauCetiBasic
+  - type: ReplacementAccent
+    accent: dog
   - type: InteractionPopup
     successChance: 0.7
     interactSuccessString: petting-success-dog
@@ -438,9 +406,6 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalWalter
-  - type: Speech
-    speechVerb: Canine
-    speechSounds: Dog
 
 - type: entity
   name: Morty
@@ -564,7 +529,7 @@
     interactFailureString: petting-failure-generic
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
-      collection: Fox
+      path: /Audio/Animals/fox_squeak.ogg
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -607,7 +572,6 @@
     allowMovement: true
     name: ghost-role-information-hamlet-name
     description: ghost-role-information-hamlet-description
-    rules: ghost-role-information-nonantagonist-rules
   - type: GhostTakeoverAvailable
   - type: InteractionPopup
     successChance: 1
@@ -629,11 +593,6 @@
     - CannotSuicide
     - Hamster
     - VimPilot
-    - ChefPilot
-  - type: FlavorProfile
-    flavors:
-    - meaty
-    - sadness
 
 - type: entity
   name: Shiva
@@ -726,7 +685,6 @@
     prob: 0.25
     name: ghost-role-information-willow-name
     description: ghost-role-information-willow-description
-    rules: ghost-role-information-nonantagonist-rules
   - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ BoxingKangarooGear ]
@@ -734,7 +692,7 @@
 - type: entity
   name: Smile
   id: MobSlimesPet
-  parent: [MobAdultSlimes, StripableInventoryBase]
+  parent: MobAdultSlimes
   description: This masterpiece has gone through thousands of experiments. But it is the sweetest creature in the world. Smile Slime!
   components:
   - type: Sprite
@@ -744,16 +702,6 @@
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
       state: aslime-_3
       shader: unshaded
-    - map: [ "head" ]
-  - type: Inventory
-    speciesId: slime
-    templateId: head
-    displacements:
-      head:
-        sizeMaps:
-          32:
-            sprite: Mobs/Pets/Smile/smile_displacement.rsi
-            state: head
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -797,10 +745,6 @@
       types:
         Blunt: 1
         Caustic: 1
-  - type: MultiHandedItem
-  - type: Item
-    sprite: Mobs/Pets/Smile/smile.rsi
-    size: Huge
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-slime
   - type: MobPrice
@@ -808,14 +752,12 @@
   - type: GhostRole
     name: ghost-role-information-smile-name
     description: ghost-role-information-smile-description
-    rules: ghost-role-information-nonantagonist-rules
-    raffle: null
   - type: Grammar
     attributes:
       proper: true
       gender: female
-  - type: TTS # Corvax-TTS
-    voice: Aidar
+  - type: TTS # Stories-TTS
+    voice: Dryad
 
 - type: entity
   name: Pun Pun
@@ -830,7 +772,6 @@
     allowMovement: true
     name: ghost-role-information-punpun-name
     description: ghost-role-information-punpun-description
-    rules: ghost-role-information-nonantagonist-rules
   - type: GhostTakeoverAvailable
   - type: Butcherable
     butcheringType: Spike
@@ -839,12 +780,12 @@
       amount: 3
     - id: DrinkTequilaBottleFull
       amount: 1
+  - type: Flashable
   - type: Tag
     tags:
     - CannotSuicide
     - DoorBumpOpener
     - VimPilot
-    - AnomalyHost
   - type: Loadout
     prototypes: [ MobMonkeyGear ]
   - type: Grammar
@@ -865,8 +806,8 @@
 #    allowMovement: true
 #    name: ghost-role-information-tropico-name
 #    description: ghost-role-information-tropico-description
-#    rules: ghost-role-information-nonantagonist-rules
 #  - type: GhostTakeoverAvailable
+#  - type: Flashable
   - type: Tag
     tags:
     - VimPilot
@@ -878,37 +819,3 @@
 #  - type: AlwaysRevolutionaryConvertible
   - type: StealTarget
     stealGroup: AnimalTropico
-
-- type: entity # Backmen
-  name: Есперон
-  parent: MobCat
-  id: MobCatEsperon
-  description: Космический кот??! Найдено в секторе "Бекман"
-  components:
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: Mobs/Pets/espeon.rsi
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: espeon
-  - type: DamageStateVisuals
-    states:
-      Alive:
-        Base: espeon
-      Critical:
-        Base: espeon_dead
-      Dead:
-  - type: NpcFactionMember
-    factions:
-      - PetsNT
-  - type: HTN
-    rootTask:
-      task: SimpleHostileCompound
-  - type: Grammar
-    attributes:
-      proper: true
-      gender: female
-  - type: Tag
-    tags:
-    - CannotSuicide
-    - VimPilot

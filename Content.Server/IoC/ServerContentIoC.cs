@@ -5,20 +5,19 @@ using Content.Server.Administration.Notes;
 using Content.Server.Afk;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection;
-using Content.Server.Corvax.TTS;
+using Content.Server.Corvax.DiscordAuth;
+using Content.Server.Corvax.JoinQueue;
+using Content.Server.Corvax.Sponsors;
+using Content.Server.Stories.TTS;
 using Content.Server.Database;
 using Content.Server.Discord;
-using Content.Server.Discord.WebhookMessages;
 using Content.Server.EUI;
 using Content.Server.GhostKick;
 using Content.Server.Info;
-using Content.Server.Mapping;
 using Content.Server.Maps;
 using Content.Server.MoMMI;
 using Content.Server.NodeContainer.NodeGroups;
-using Content.Server.Players.JobWhitelist;
 using Content.Server.Players.PlayTimeTracking;
-using Content.Server.Players.RateLimiting;
 using Content.Server.Preferences.Managers;
 using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
@@ -26,10 +25,8 @@ using Content.Server.Voting.Managers;
 using Content.Server.Worldgen.Tools;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Administration.Managers;
-using Content.Shared.Chat;
 using Content.Shared.Kitchen;
 using Content.Shared.Players.PlayTimeTracking;
-using Content.Shared.Players.RateLimiting;
 
 namespace Content.Server.IoC
 {
@@ -38,11 +35,11 @@ namespace Content.Server.IoC
         public static void Register()
         {
             IoCManager.Register<IChatManager, ChatManager>();
-            IoCManager.Register<ISharedChatManager, ChatManager>();
             IoCManager.Register<IChatSanitizationManager, ChatSanitizationManager>();
             IoCManager.Register<IMoMMILink, MoMMILink>();
             IoCManager.Register<IServerPreferencesManager, ServerPreferencesManager>();
             IoCManager.Register<IServerDbManager, ServerDbManager>();
+            IoCManager.Register<IPartnersManager, PartnersManager>();
             IoCManager.Register<RecipeManager, RecipeManager>();
             IoCManager.Register<INodeGroupFactory, NodeGroupFactory>();
             IoCManager.Register<IConnectionManager, ConnectionManager>();
@@ -63,29 +60,16 @@ namespace Content.Server.IoC
             IoCManager.Register<IAdminLogManager, AdminLogManager>();
             IoCManager.Register<PlayTimeTrackingManager>();
             IoCManager.Register<UserDbDataManager>();
-            IoCManager.Register<TTSManager>(); // Corvax-TTS
+            IoCManager.Register<SponsorsManager>(); // Corvax-Sponsors
+            IoCManager.Register<JoinQueueManager>(); // Corvax-Queue
+            IoCManager.Register<DiscordAuthManager>(); // Corvax-DiscordAuth
+            IoCManager.Register<TTSManager>(); // Stories-TTS
             IoCManager.Register<ServerInfoManager>();
             IoCManager.Register<PoissonDiskSampler>();
             IoCManager.Register<DiscordWebhook>();
-
-            // start-backmen: IoC
-            IoCManager.Register<Content.Corvax.Interfaces.Shared.ISharedSponsorsManager, Backmen.Sponsors.SponsorsManager>();
-            IoCManager.Register<Content.Corvax.Interfaces.Server.IServerDiscordAuthManager, Backmen.DiscordAuth.DiscordAuthManager>();
-            IoCManager.Register<Content.Corvax.Interfaces.Server.IServerJoinQueueManager, Backmen.JoinQueue.JoinQueueManager>();
-            IoCManager.Register<Content.Corvax.Interfaces.Shared.ISharedLoadoutsManager, Backmen.Sponsors.LoadoutsManager>();
-            // end-backmen: IoC
-            IoCManager.Register<VoteWebhooks>();
             IoCManager.Register<ServerDbEntryManager>();
             IoCManager.Register<ISharedPlaytimeManager, PlayTimeTrackingManager>();
             IoCManager.Register<ServerApi>();
-            IoCManager.Register<JobWhitelistManager>();
-            IoCManager.Register<PlayerRateLimitManager>();
-            IoCManager.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
-            IoCManager.Register<MappingManager>();
-            IoCManager.Register<IWatchlistWebhookManager, WatchlistWebhookManager>();
-            IoCManager.Register<ConnectionManager>();
-            IoCManager.Register<MultiServerKickManager>();
-            IoCManager.Register<CVarControlManager>();
         }
     }
 }

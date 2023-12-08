@@ -1,7 +1,6 @@
-using Content.Shared.Corvax.TTS;
+using Content.Shared.Stories.TTS;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
-using Content.Shared.Inventory;
 using Robust.Shared.Enums;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -48,13 +47,13 @@ public sealed partial class HumanoidAppearanceComponent : Component
     [DataField(required: true), AutoNetworkedField]
     public ProtoId<SpeciesPrototype> Species { get; set; }
 
-    // Corvax-TTS-Start
+    // Stories-TTS-Start
     /// <summary>
     ///     Current voice. Used for correct cloning.
     /// </summary>
     [DataField("voice")]
     public ProtoId<TTSVoicePrototype> Voice { get; set; } = SharedHumanoidAppearanceSystem.DefaultVoice;
-    // Corvax-TTS-End
+    // Stories-TTS-End
 
     /// <summary>
     ///     The initial profile and base layers to apply to this humanoid.
@@ -69,12 +68,11 @@ public sealed partial class HumanoidAppearanceComponent : Component
     public Color SkinColor { get; set; } = Color.FromHex("#C0967F");
 
     /// <summary>
-    ///     A map of the visual layers currently hidden to the equipment
-    ///     slots that are currently hiding them. This will affect the base
-    ///     sprite on this humanoid layer, and any markings that sit above it.
+    ///     Visual layers currently hidden. This will affect the base sprite
+    ///     on this humanoid layer, and any markings that sit above it.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public Dictionary<HumanoidVisualLayers, SlotFlags> HiddenLayers = new();
+    public HashSet<HumanoidVisualLayers> HiddenLayers = new();
 
     [DataField, AutoNetworkedField]
     public Sex Sex = Sex.Male;
@@ -99,15 +97,6 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     [DataField]
     public HashSet<HumanoidVisualLayers> HideLayersOnEquip = [HumanoidVisualLayers.Hair];
-
-    /// <summary>
-    ///     Which markings the humanoid defaults to when nudity is toggled off.
-    /// </summary>
-    [DataField]
-    public ProtoId<MarkingPrototype>? UndergarmentTop = new ProtoId<MarkingPrototype>("UndergarmentTopTanktop");
-
-    [DataField]
-    public ProtoId<MarkingPrototype>? UndergarmentBottom = new ProtoId<MarkingPrototype>("UndergarmentBottomBoxers");
 }
 
 [DataDefinition]
