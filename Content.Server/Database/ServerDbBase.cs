@@ -1,9 +1,8 @@
+using Content.Shared._Adventure.TTS;
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
-using System.Net.Http.Json;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
 using System.Threading;
@@ -29,10 +28,6 @@ namespace Content.Server.Database
     public abstract class ServerDbBase
     {
         private readonly ISawmill _opsLog;
-        protected string _playtimeServerUrl = String.Empty;
-        protected bool _playtimeServerSaveLocally = false;
-        protected bool _playtimeServerEnabled = false;
-        protected readonly HttpClient _httpClient = new();
 
         public event Action<DatabaseNotification>? OnNotificationReceived;
 
@@ -206,11 +201,11 @@ namespace Content.Server.Database
             if (Enum.TryParse<Gender>(profile.Gender, true, out var genderVal))
                 gender = genderVal;
 
-            // Corvax-TTS-Start
+            // c4llv07e tts
             var voice = profile.Voice;
             if (voice == String.Empty)
-                voice = SharedHumanoidAppearanceSystem.DefaultSexVoice[sex];
-            // Corvax-TTS-End
+                voice = TTSConfig.DefaultSexVoice[sex];
+            // c4llv07e tts
 
             // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
             var markingsRaw = profile.Markings?.Deserialize<List<string>>();
@@ -234,7 +229,6 @@ namespace Content.Server.Database
             {
                 var loadout = new RoleLoadout(role.RoleName)
                 {
-                    EntityName = role.EntityName,
                 };
 
                 foreach (var group in role.Groups)
@@ -256,7 +250,6 @@ namespace Content.Server.Database
                 profile.CharacterName,
                 profile.FlavorText,
                 profile.Species,
-                voice, // Corvax-TTS
                 profile.Age,
                 sex,
                 gender,
@@ -275,7 +268,8 @@ namespace Content.Server.Database
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-                loadouts
+                loadouts,
+                voice // c4llv07e tts
             );
         }
 
@@ -290,10 +284,10 @@ namespace Content.Server.Database
             }
             var markings = JsonSerializer.SerializeToDocument(markingStrings);
 
+            profile.Voice = humanoid.Voice; // c4llv07e tts
             profile.CharacterName = humanoid.Name;
             profile.FlavorText = humanoid.FlavorText;
             profile.Species = humanoid.Species;
-            profile.Voice = humanoid.Voice; // Corvax-TTS
             profile.Age = humanoid.Age;
             profile.Sex = humanoid.Sex.ToString();
             profile.Gender = humanoid.Gender.ToString();
@@ -334,7 +328,6 @@ namespace Content.Server.Database
                 var dz = new ProfileRoleLoadout()
                 {
                     RoleName = role,
-                    EntityName = loadouts.EntityName ?? string.Empty,
                 };
 
                 foreach (var (group, groupLoadouts) in loadouts.SelectedLoadouts)
@@ -404,14 +397,12 @@ namespace Content.Server.Database
         /// </summary>
         /// <param name="address">The ip address of the user.</param>
         /// <param name="userId">The id of the user.</param>
-        /// <param name="hwId">The legacy HWId of the user.</param>
-        /// <param name="modernHWIds">The modern HWIDs of the user.</param>
+        /// <param name="hwId">The HWId of the user.</param>
         /// <returns>The user's latest received un-pardoned ban, or null if none exist.</returns>
         public abstract Task<ServerBanDef?> GetServerBanAsync(
             IPAddress? address,
             NetUserId? userId,
-            ImmutableArray<byte>? hwId,
-            ImmutableArray<ImmutableArray<byte>>? modernHWIds);
+            ImmutableArray<byte>? hwId);
 
         /// <summary>
         ///     Looks up an user's ban history.
@@ -420,15 +411,13 @@ namespace Content.Server.Database
         /// </summary>
         /// <param name="address">The ip address of the user.</param>
         /// <param name="userId">The id of the user.</param>
-        /// <param name="hwId">The legacy HWId of the user.</param>
-        /// <param name="modernHWIds">The modern HWIDs of the user.</param>
+        /// <param name="hwId">The HWId of the user.</param>
         /// <param name="includeUnbanned">Include pardoned and expired bans.</param>
         /// <returns>The user's ban history.</returns>
         public abstract Task<List<ServerBanDef>> GetServerBansAsync(
             IPAddress? address,
             NetUserId? userId,
             ImmutableArray<byte>? hwId,
-            ImmutableArray<ImmutableArray<byte>>? modernHWIds,
             bool includeUnbanned);
 
         public abstract Task AddServerBanAsync(ServerBanDef serverBan);
@@ -519,13 +508,11 @@ namespace Content.Server.Database
         /// <param name="address">The IP address of the user.</param>
         /// <param name="userId">The NetUserId of the user.</param>
         /// <param name="hwId">The Hardware Id of the user.</param>
-        /// <param name="modernHWIds">The modern HWIDs of the user.</param>
         /// <param name="includeUnbanned">Whether expired and pardoned bans are included.</param>
         /// <returns>The user's role ban history.</returns>
         public abstract Task<List<ServerRoleBanDef>> GetServerRoleBansAsync(IPAddress? address,
             NetUserId? userId,
             ImmutableArray<byte>? hwId,
-            ImmutableArray<ImmutableArray<byte>>? modernHWIds,
             bool includeUnbanned);
 
         public abstract Task<ServerRoleBanDef> AddServerRoleBanAsync(ServerRoleBanDef serverRoleBan);
@@ -534,41 +521,22 @@ namespace Content.Server.Database
         public async Task EditServerRoleBan(int id, string reason, NoteSeverity severity, DateTimeOffset? expiration, Guid editedBy, DateTimeOffset editedAt)
         {
             await using var db = await GetDb();
-            var roleBanDetails = await db.DbContext.RoleBan
-                .Where(b => b.Id == id)
-                .Select(b => new { b.BanTime, b.PlayerUserId })
-                .SingleOrDefaultAsync();
 
-            if (roleBanDetails == default)
+            var ban = await db.DbContext.RoleBan.SingleOrDefaultAsync(b => b.Id == id);
+            if (ban is null)
                 return;
-
-            await db.DbContext.RoleBan
-                .Where(b => b.BanTime == roleBanDetails.BanTime && b.PlayerUserId == roleBanDetails.PlayerUserId)
-                .ExecuteUpdateAsync(setters => setters
-                    .SetProperty(b => b.Severity, severity)
-                    .SetProperty(b => b.Reason, reason)
-                    .SetProperty(b => b.ExpirationTime, expiration.HasValue ? expiration.Value.UtcDateTime : (DateTime?)null)
-                    .SetProperty(b => b.LastEditedById, editedBy)
-                    .SetProperty(b => b.LastEditedAt, editedAt.UtcDateTime)
-                );
+            ban.Severity = severity;
+            ban.Reason = reason;
+            ban.ExpirationTime = expiration?.UtcDateTime;
+            ban.LastEditedById = editedBy;
+            ban.LastEditedAt = editedAt.UtcDateTime;
+            await db.DbContext.SaveChangesAsync();
         }
         #endregion
 
         #region Playtime
         public async Task<List<PlayTime>> GetPlayTimes(Guid player, CancellationToken cancel)
         {
-            if (_playtimeServerEnabled)
-            {
-                var requestUrl = $"{_playtimeServerUrl}?playerId={WebUtility.UrlEncode(player.ToString())}";
-                var response = await _httpClient.GetAsync(requestUrl, cancel);
-                if (!response.IsSuccessStatusCode)
-                {
-                    return [];
-                }
-                var data = await response.Content.ReadFromJsonAsync<List<PlayTime>>(cancel);
-                return data!;
-            }
-
             await using var db = await GetDb(cancel);
 
             return await db.DbContext.PlayTime
@@ -578,21 +546,6 @@ namespace Content.Server.Database
 
         public async Task UpdatePlayTimes(IReadOnlyCollection<PlayTimeUpdate> updates)
         {
-            if (_playtimeServerEnabled)
-            {
-                var data = updates.Select(x => new PlayTime()
-                {
-                    PlayerId = x.User.UserId,
-                    Tracker = x.Tracker,
-                    TimeSpent = x.Time
-                });
-                await _httpClient.PostAsJsonAsync(_playtimeServerUrl, data);
-                if (!_playtimeServerSaveLocally)
-                {
-                    return;
-                }
-            }
-
             await using var db = await GetDb();
 
             // Ideally I would just be able to send a bunch of UPSERT commands, but EFCore is a pile of garbage.
@@ -642,7 +595,7 @@ namespace Content.Server.Database
             NetUserId userId,
             string userName,
             IPAddress address,
-            ImmutableTypedHwid? hwId)
+            ImmutableArray<byte> hwId)
         {
             await using var db = await GetDb();
 
@@ -659,7 +612,7 @@ namespace Content.Server.Database
             record.LastSeenTime = DateTime.UtcNow;
             record.LastSeenAddress = address;
             record.LastSeenUserName = userName;
-            record.LastSeenHWId = hwId;
+            record.LastSeenHWId = hwId.ToArray();
 
             await db.DbContext.SaveChangesAsync();
         }
@@ -705,7 +658,7 @@ namespace Content.Server.Database
                 player.LastSeenUserName,
                 new DateTimeOffset(NormalizeDatabaseTime(player.LastSeenTime)),
                 player.LastSeenAddress,
-                player.LastSeenHWId);
+                player.LastSeenHWId?.ToImmutableArray());
         }
 
         #endregion
@@ -714,11 +667,11 @@ namespace Content.Server.Database
         /*
          * CONNECTION LOG
          */
-        public abstract Task<int> AddConnectionLogAsync(NetUserId userId,
+        public abstract Task<int> AddConnectionLogAsync(
+            NetUserId userId,
             string userName,
             IPAddress address,
-            ImmutableTypedHwid? hwId,
-            float trust,
+            ImmutableArray<byte> hwId,
             ConnectionDenyReason? denied,
             int serverId);
 
@@ -794,20 +747,6 @@ namespace Content.Server.Database
             existing.Flags = admin.Flags;
             existing.Title = admin.Title;
             existing.AdminRankId = admin.AdminRankId;
-            existing.Deadminned = admin.Deadminned;
-            existing.Suspended = admin.Suspended;
-
-            await db.DbContext.SaveChangesAsync(cancel);
-        }
-
-        public async Task UpdateAdminDeadminnedAsync(NetUserId userId, bool deadminned, CancellationToken cancel)
-        {
-            await using var db = await GetDb(cancel);
-
-            var adminRecord = db.DbContext.Admin.Where(a => a.UserId == userId);
-            await adminRecord.ExecuteUpdateAsync(
-                set => set.SetProperty(p => p.Deadminned, deadminned),
-                cancellationToken: cancel);
 
             await db.DbContext.SaveChangesAsync(cancel);
         }
@@ -945,41 +884,10 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
         public async Task AddAdminLogs(List<AdminLog> logs)
         {
-            const int maxRetryAttempts = 5;
-            var initialRetryDelay = TimeSpan.FromSeconds(5);
-
             DebugTools.Assert(logs.All(x => x.RoundId > 0), "Adding logs with invalid round ids.");
-
-            var attempt = 0;
-            var retryDelay = initialRetryDelay;
-
-            while (attempt < maxRetryAttempts)
-            {
-                try
-                {
-                    await using var db = await GetDb();
-                    db.DbContext.AdminLog.AddRange(logs);
-                    await db.DbContext.SaveChangesAsync();
-                    _opsLog.Debug($"Successfully saved {logs.Count} admin logs.");
-                    break;
-                }
-                catch (Exception ex)
-                {
-                    attempt += 1;
-                    _opsLog.Error($"Attempt {attempt} failed to save logs: {ex}");
-
-                    if (attempt >= maxRetryAttempts)
-                    {
-                        _opsLog.Error($"Max retry attempts reached. Failed to save {logs.Count} admin logs.");
-                        return;
-                    }
-
-                    _opsLog.Warning($"Retrying in {retryDelay.TotalSeconds} seconds...");
-                    await Task.Delay(retryDelay);
-
-                    retryDelay *= 2;
-                }
-            }
+            await using var db = await GetDb();
+            db.DbContext.AdminLog.AddRange(logs);
+            await db.DbContext.SaveChangesAsync();
         }
 
         protected abstract IQueryable<AdminLog> StartAdminLogsQuery(ServerDbContext db, LogFilter? filter = null);
@@ -1155,7 +1063,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 .SingleOrDefaultAsync());
         }
 
-        public async Task SetLastReadRules(NetUserId player, DateTimeOffset? date)
+        public async Task SetLastReadRules(NetUserId player, DateTimeOffset date)
         {
             await using var db = await GetDb();
 
@@ -1165,7 +1073,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 return;
             }
 
-            dbPlayer.LastReadRules = date?.UtcDateTime;
+            dbPlayer.LastReadRules = date.UtcDateTime;
             await db.DbContext.SaveChangesAsync();
         }
 
@@ -1776,75 +1684,6 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         }
 
         #endregion
-
-        # region IPIntel
-
-        public async Task<bool> UpsertIPIntelCache(DateTime time, IPAddress ip, float score)
-        {
-            while (true)
-            {
-                try
-                {
-                    await using var db = await GetDb();
-
-                    var existing = await db.DbContext.IPIntelCache
-                        .Where(w => ip.Equals(w.Address))
-                        .SingleOrDefaultAsync();
-
-                    if (existing == null)
-                    {
-                        var newCache = new IPIntelCache
-                        {
-                            Time = time,
-                            Address = ip,
-                            Score = score,
-                        };
-                        db.DbContext.IPIntelCache.Add(newCache);
-                    }
-                    else
-                    {
-                        existing.Time = time;
-                        existing.Score = score;
-                    }
-
-                    await Task.Delay(5000);
-
-                    await db.DbContext.SaveChangesAsync();
-                    return true;
-                }
-                catch (DbUpdateException)
-                {
-                    _opsLog.Warning("IPIntel UPSERT failed with a db exception... retrying.");
-                }
-            }
-        }
-
-        public async Task<IPIntelCache?> GetIPIntelCache(IPAddress ip)
-        {
-            await using var db = await GetDb();
-
-            return await db.DbContext.IPIntelCache
-                .SingleOrDefaultAsync(w => ip.Equals(w.Address));
-        }
-
-        public async Task<bool> CleanIPIntelCache(TimeSpan range)
-        {
-            await using var db = await GetDb();
-
-            // Calculating this here cause otherwise sqlite whines.
-            var cutoffTime = DateTime.UtcNow.Subtract(range);
-
-            await db.DbContext.IPIntelCache
-                .Where(w => w.Time <= cutoffTime)
-                .ExecuteDeleteAsync();
-
-            await db.DbContext.SaveChangesAsync();
-            return true;
-        }
-
-        #endregion
-
-        public abstract Task SendNotification(DatabaseNotification notification);
 
         // SQLite returns DateTime as Kind=Unspecified, Npgsql actually knows for sure it's Kind=Utc.
         // Normalize DateTimes here so they're always Utc. Thanks.

@@ -307,16 +307,8 @@
     spawned:
     - id: FoodMeat
       amount: 2
-#  - type: ReplacementAccent
-#    accent: dog
-  - type: LanguageSpeaker
-    currentLanguage: TauCetiBasic
-  - type: LanguageKnowledge #backmen: languages
-    speaks:
-    - Dog
-    understands:
-    - Dog
-    - TauCetiBasic
+  - type: ReplacementAccent
+    accent: dog
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-dog
@@ -328,9 +320,6 @@
     attributes:
       proper: true
       gender: male
-  - type: Speech
-    speechVerb: Canine
-    speechSounds: Dog
   - type: Tag
     tags:
     - CannotSuicide
@@ -411,16 +400,8 @@
     spawned:
     - id: FoodMeat
       amount: 3
-#  - type: ReplacementAccent
-#    accent: dog
-  - type: LanguageSpeaker
-    currentLanguage: TauCetiBasic
-  - type: LanguageKnowledge #backmen: languages
-    speaks:
-    - Dog
-    understands:
-    - Dog
-    - TauCetiBasic
+  - type: ReplacementAccent
+    accent: dog
   - type: InteractionPopup
     successChance: 0.7
     interactSuccessString: petting-success-dog
@@ -438,9 +419,6 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalWalter
-  - type: Speech
-    speechVerb: Canine
-    speechSounds: Dog
 
 - type: entity
   name: Morty
@@ -734,7 +712,7 @@
 - type: entity
   name: Smile
   id: MobSlimesPet
-  parent: [MobAdultSlimes, StripableInventoryBase]
+  parent: MobAdultSlimes
   description: This masterpiece has gone through thousands of experiments. But it is the sweetest creature in the world. Smile Slime!
   components:
   - type: Sprite
@@ -744,16 +722,6 @@
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
       state: aslime-_3
       shader: unshaded
-    - map: [ "head" ]
-  - type: Inventory
-    speciesId: slime
-    templateId: head
-    displacements:
-      head:
-        sizeMaps:
-          32:
-            sprite: Mobs/Pets/Smile/smile_displacement.rsi
-            state: head
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -799,7 +767,7 @@
         Caustic: 1
   - type: MultiHandedItem
   - type: Item
-    sprite: Mobs/Pets/Smile/smile.rsi
+    sprite: Mobs/Pets/smile.rsi
     size: Huge
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-slime
@@ -809,13 +777,12 @@
     name: ghost-role-information-smile-name
     description: ghost-role-information-smile-description
     rules: ghost-role-information-nonantagonist-rules
-    raffle: null
   - type: Grammar
     attributes:
       proper: true
       gender: female
-  - type: TTS # Corvax-TTS
-    voice: Aidar
+  - type: TTS # c4llv07e tts
+    voice: Dryad # TODO(c4): fix voices.
 
 - type: entity
   name: Pun Pun
@@ -878,37 +845,3 @@
 #  - type: AlwaysRevolutionaryConvertible
   - type: StealTarget
     stealGroup: AnimalTropico
-
-- type: entity # Backmen
-  name: Есперон
-  parent: MobCat
-  id: MobCatEsperon
-  description: Космический кот??! Найдено в секторе "Бекман"
-  components:
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: Mobs/Pets/espeon.rsi
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: espeon
-  - type: DamageStateVisuals
-    states:
-      Alive:
-        Base: espeon
-      Critical:
-        Base: espeon_dead
-      Dead:
-  - type: NpcFactionMember
-    factions:
-      - PetsNT
-  - type: HTN
-    rootTask:
-      task: SimpleHostileCompound
-  - type: Grammar
-    attributes:
-      proper: true
-      gender: female
-  - type: Tag
-    tags:
-    - CannotSuicide
-    - VimPilot

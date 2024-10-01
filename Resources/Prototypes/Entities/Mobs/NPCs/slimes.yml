@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   name: basic slime
   id: BaseMobAdultSlimes
   parent: [ SimpleMobBase, MobCombat ]
@@ -112,22 +112,6 @@
     speechSounds: Slime
   - type: TypingIndicator
     proto: slime
-  - type: LanguageSpeaker
-    currentLanguage: Slime
-  - type: LanguageKnowledge #backmen: languages
-    speaks:
-    - Slime
-    understands:
-    - Slime
-    - TauCetiBasic
-  # start-backmen: surgery
-  - type: SurgeryTarget
-  - type: UserInterface
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
-  # end-backmen: surgery
-  - type: Fauna # Lavaland Change
 
 - type: entity
   name: basic slime
@@ -136,8 +120,8 @@
   abstract: true
   description: It looks so much like jelly. I wonder what it tastes like?
   components:
-#  - type: ReplacementAccent
-#    accent: slimes
+  - type: ReplacementAccent
+    accent: slimes
   - type: GhostTakeoverAvailable
   - type: GhostRole
     makeSentient: true
@@ -158,8 +142,8 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
-  - type: TTS # Corvax-TTS
-    voice: Aidar
+  - type: TTS # c4llv07e tts
+    voice: glados # TODO(c4): fix voices.
 
 - type: entity
   name: blue slime
@@ -185,8 +169,6 @@
     - type: GhostRole
       description: ghost-role-information-angry-slimes-description
       rules: ghost-role-information-angry-slimes-rules
-      mindRoles:
-      - MindRoleGhostRoleTeamAntagonist
       raffle:
         settings: short
 
@@ -225,8 +207,6 @@
     - type: GhostRole
       description: ghost-role-information-angry-slimes-description
       rules: ghost-role-information-angry-slimes-rules
-      mindRoles:
-      - MindRoleGhostRoleTeamAntagonist
       raffle:
         settings: short
 
@@ -250,7 +230,8 @@
         types:
           Blunt: 6
           Structural: 4
-          Caustic: 4
+          Caustic: 1
+          Cellular: 3
 
 - type: entity
   name: yellow slime
@@ -264,7 +245,5 @@
     - type: GhostRole
       description: ghost-role-information-angry-slimes-description
       rules: ghost-role-information-angry-slimes-rules
-      mindRoles:
-      - MindRoleGhostRoleTeamAntagonist
       raffle:
         settings: short

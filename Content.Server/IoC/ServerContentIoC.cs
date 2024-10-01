@@ -1,3 +1,4 @@
+using Content.Server._Adventure.TTS; // c4llv07e tts
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -37,6 +38,7 @@ namespace Content.Server.IoC
     {
         public static void Register()
         {
+            IoCManager.Register<TTSManager>(); // c4llv07e tts
             IoCManager.Register<IChatManager, ChatManager>();
             IoCManager.Register<ISharedChatManager, ChatManager>();
             IoCManager.Register<IChatSanitizationManager, ChatSanitizationManager>();
