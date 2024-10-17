@@ -104,6 +104,12 @@
   id: JobParamedic
 
 - type: playTimeTracker
+  id: JobPsychotherapist
+
+- type: playTimeTracker
+  id: JobMedBrother
+
+- type: playTimeTracker
   id: JobPsychologist
 
 - type: playTimeTracker
@@ -153,4 +159,3 @@
 
 - type: playTimeTracker
   id: JobZookeeper
-

@@ -399,6 +399,30 @@
       - state: paramedic
 
 - type: entity
+  id: SpawnPointPsychotherapist
+  parent: SpawnPointJobBase
+  name: psychotherapist
+  components:
+  - type: SpawnPoint
+    job_id: Psychotherapist
+  - type: Sprite
+    layers:
+      - state: green
+      - state: doctor
+
+- type: entity
+  id: SpawnPointMedBrother
+  parent: SpawnPointJobBase
+  name: medbrother
+  components:
+  - type: SpawnPoint
+    job_id: MedBrother
+  - type: Sprite
+    layers:
+      - state: green
+      - state: doctor
+
+- type: entity
   id: SpawnPointChemist
   parent: SpawnPointJobBase
   name: chemist
@@ -486,17 +510,15 @@
       - state: green
       - state: detective
 
-# - type: entity
-  # id: SpawnPointBrigmedic
-  # parent: SpawnPointJobBase
-  # name: brigmedic
-  # components:
-  # - type: SpawnPoint
-    # job_id: Brigmedic
-  # - type: Sprite
-    # layers:
-      # - state: green
-      # - state: brigmedic
+- type: entity
+  id: SpawnPointBrigmedic
+  parent: SpawnPointJobBase
+  name: brigmedic
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - state: brigmedic
 
 # SPECIAL
 # ERT
