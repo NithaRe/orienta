@@ -137,6 +137,15 @@ public sealed partial class TTSSystem
             {"с4", "Си 4"}, // cyrillic
             {"c4", "Си 4"}, // latinic
             {"бсс", "Бэ Эс Эс"},
+            // Adventure-Stars
+            {"+", "Плюс"}, // for dexalin+
+            {"бм", "Бэ Эм"},
+            {"бма", "Бэ Эма"},
+            {"бму", "Бэ Эму"},
+            {"бмом", "Бэ Эмом"},
+            {"рпс", "Эр Пэ Эс"},
+            {"опрс", "О Пэ Эр Эс"},
+            // Adventure-End
         };
 
     private static readonly IReadOnlyDictionary<string, string> ReverseTranslit =
