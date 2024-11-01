@@ -667,7 +667,7 @@
   - type: Sprite
     state: pill3
   - type: Label
-    currentLabel: lidicaine 10u
+    currentLabel: Лидикаин 10u
   - type: SolutionContainerManager
     solutions:
       food:
@@ -687,7 +687,7 @@
   - type: Sprite
     state: pill3
   - type: Label
-    currentLabel: atractine 10u
+    currentLabel: Атрактин 10u
   - type: SolutionContainerManager
     solutions:
       food:
@@ -707,7 +707,7 @@
   - type: Sprite
     state: pill3
   - type: Label
-    currentLabel: anodium 10u
+    currentLabel: Анодиум 10u
   - type: SolutionContainerManager
     solutions:
       food:
@@ -727,7 +727,7 @@
   - type: Sprite
     state: pill3
   - type: Label
-    currentLabel: corvol 10u
+    currentLabel: Корвол 10u
   - type: SolutionContainerManager
     solutions:
       food:
