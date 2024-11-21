@@ -250,9 +250,7 @@ namespace Content.Shared.Preferences
             }
 
             // c4llv07e tts begin
-            var voices = prototypeManager
-                .EnumeratePrototypes<TTSVoicePrototype>()
-                .Where(o => CanHaveVoice(o, sex)).ToArray();
+            var voices = prototypeManager.EnumeratePrototypes<TTSVoicePrototype>().ToArray();
             string voiceId = string.Empty;
             if (voices.Count() != 0)
             {
@@ -649,7 +647,7 @@ namespace Content.Shared.Preferences
 
             // c4llv07e tts begin
             prototypeManager.TryIndex<TTSVoicePrototype>(Voice, out var voice);
-            if (voice is null || !CanHaveVoice(voice, Sex))
+            if (voice is null)
                 Voice = TTSConfig.DefaultSexVoice[sex];
             // c4llv07e tts end
 
@@ -711,13 +709,6 @@ namespace Content.Shared.Preferences
 
             return result;
         }
-
-        // c4llv07e tts begin
-        public static bool CanHaveVoice(TTSVoicePrototype voice, Sex sex)
-        {
-            return voice.RoundStart && sex == Sex.Unsexed || (voice.Sex == sex || voice.Sex == Sex.Unsexed);
-        }
-        // c4llv07e tts end
 
         public ICharacterProfile Validated(ICommonSession session, IDependencyCollection collection)
         {
