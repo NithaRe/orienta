@@ -109,10 +109,10 @@ public sealed partial class TTSSystem : EntitySystem
 
     private async void HandleWhisper(EntityUid uid, string message, string obfMessage, string speaker)
     {
-        var fullSoundData = await GenerateTTS(message, speaker, true);
+        var fullSoundData = await GenerateTTS(message, speaker);
         if (fullSoundData is null) return;
 
-        var obfSoundData = await GenerateTTS(obfMessage, speaker, true);
+        var obfSoundData = await GenerateTTS(obfMessage, speaker);
         if (obfSoundData is null) return;
 
         var fullTtsEvent = new PlayTTSEvent(fullSoundData, GetNetEntity(uid), true);
