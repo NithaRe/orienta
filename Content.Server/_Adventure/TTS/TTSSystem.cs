@@ -21,6 +21,8 @@ public sealed partial class TTSSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _xforms = default!;
     [Dependency] private readonly IRobustRandom _rng = default!;
 
+    private List<ICommonSession> _ignoredRecipients = new();
+
     private readonly List<string> _sampleText =
         new()
         {
@@ -50,6 +52,7 @@ public sealed partial class TTSSystem : EntitySystem
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
 
         SubscribeNetworkEvent<RequestPreviewTTSEvent>(OnRequestPreviewTTS);
+        SubscribeNetworkEvent<ClientOptionTTSEvent>(OnClientOptionTTS);
 
         RegisterRateLimits();
     }
@@ -57,6 +60,14 @@ public sealed partial class TTSSystem : EntitySystem
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
     {
         _ttsManager.ResetCache();
+    }
+
+    private async void OnClientOptionTTS(ClientOptionTTSEvent ev, EntitySessionEventArgs args)
+    {
+        if (ev.Enabled)
+            _ignoredRecipients.Remove(args.SenderSession);
+        else
+            _ignoredRecipients.Add(args.SenderSession);
     }
 
     private async void OnRequestPreviewTTS(RequestPreviewTTSEvent ev, EntitySessionEventArgs args)
@@ -104,7 +115,7 @@ public sealed partial class TTSSystem : EntitySystem
     {
         var soundData = await GenerateTTS(message, speaker);
         if (soundData is null) return;
-        RaiseNetworkEvent(new PlayTTSEvent(soundData, GetNetEntity(uid)), Filter.Pvs(uid));
+        RaiseNetworkEvent(new PlayTTSEvent(soundData, GetNetEntity(uid)), Filter.Pvs(uid).RemovePlayers(_ignoredRecipients));
     }
 
     private async void HandleWhisper(EntityUid uid, string message, string obfMessage, string speaker)
@@ -125,6 +136,9 @@ public sealed partial class TTSSystem : EntitySystem
         foreach (var session in receptions)
         {
             if (!session.AttachedEntity.HasValue) continue;
+
+            if (_ignoredRecipients.Contains(session)) continue;
+
             var xform = xformQuery.GetComponent(session.AttachedEntity.Value);
             var distance = (sourcePos - _xforms.GetWorldPosition(xform, xformQuery)).Length();
             if (distance > ChatSystem.VoiceRange * ChatSystem.VoiceRange)
