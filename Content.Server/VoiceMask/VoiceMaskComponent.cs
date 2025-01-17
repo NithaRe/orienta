@@ -1,6 +1,6 @@
 using Content.Shared.Speech;
 using Robust.Shared.Prototypes;
-using Content.Shared.Humanoid;
+using Content.Shared._Adventure.TTS;
 
 namespace Content.Server.VoiceMask;
 
@@ -15,6 +15,12 @@ namespace Content.Server.VoiceMask;
 [RegisterComponent]
 public sealed partial class VoiceMaskComponent : Component
 {
+    // Adventure tts begin
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public string VoiceId = TTSConfig.DefaultVoice;
+    // Adventure tts end
+
     /// <summary>
     ///     The name that will override an entities default name. If null, it will use the default override.
     /// </summary>
@@ -32,12 +38,6 @@ public sealed partial class VoiceMaskComponent : Component
     /// </summary>
     [DataField]
     public EntProtoId Action = "ActionChangeVoiceMask";
-
-    // Corvax-TTS-Start
-    [DataField]
-    [ViewVariables(VVAccess.ReadWrite)]
-    public string VoiceId = SharedHumanoidAppearanceSystem.DefaultVoice;
-    // Corvax-TTS-End
 
     /// <summary>
     ///     Reference to the action.

@@ -32,6 +32,11 @@ namespace Content.Shared.Preferences
         public const int MaxNameLength = 32;
         public const int MaxDescLength = 512;
 
+        // Adventure tts begin
+        [DataField]
+        public string Voice { get; set; } = TTSConfig.DefaultVoice;
+        // Adventure tts end
+
         /// <summary>
         /// Job preferences for initial spawn.
         /// </summary>
