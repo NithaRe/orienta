@@ -16,6 +16,8 @@ public sealed partial class VoiceMaskNameChangeWindow : FancyWindow
 
     private void ReloadVoices()
     {
+        if (_cfg is null)
+            return;
         TTSContainer.Visible = _cfg.GetCVar(ACVars.TTSEnabled);
         if (!_cfg.GetCVar(ACVars.TTSEnabled))
             return;
@@ -23,11 +25,10 @@ public sealed partial class VoiceMaskNameChangeWindow : FancyWindow
         {
             VoiceSelector.SelectId(args.Id);
             if (VoiceSelector.SelectedMetadata != null)
-                OnVoiceChange!((string)VoiceSelector.SelectedMetadata);
+                OnVoiceChange?.Invoke((string)VoiceSelector.SelectedMetadata);
         };
         _voices = _proto
             .EnumeratePrototypes<TTSVoicePrototype>()
-            .Where(o => o.RoundStart)
             .OrderBy(o => Loc.GetString(o.Name))
             .ToList();
         for (var i = 0; i < _voices.Count; i++)

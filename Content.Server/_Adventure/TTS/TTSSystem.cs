@@ -1,14 +1,14 @@
-using System.Threading.Tasks;
 using Content.Server.Chat.Systems;
 using Content.Server.Players.RateLimiting;
+using Content.Shared.GameTicking;
 using Content.Shared.Players.RateLimiting;
 using Content.Shared._Adventure.ACVar;
 using Content.Shared._Adventure.TTS;
-using Content.Shared.GameTicking;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using System.Threading.Tasks;
 
 namespace Content.Server._Adventure.TTS;
 
@@ -164,17 +164,5 @@ public sealed partial class TTSSystem : EntitySystem
         // c4llv07e fix tts end
 
         return await _ttsManager.ConvertTextToSpeech(speaker, textSanitized, effect); // c4llv07e fix tts
-    }
-}
-
-public sealed class TransformSpeakerVoiceEvent : EntityEventArgs
-{
-    public EntityUid Sender;
-    public string VoiceId;
-
-    public TransformSpeakerVoiceEvent(EntityUid sender, string voiceId)
-    {
-        Sender = sender;
-        VoiceId = voiceId;
     }
 }

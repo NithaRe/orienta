@@ -20,6 +20,7 @@ public sealed partial class VoiceMaskNameChangeWindow : FancyWindow
     public VoiceMaskNameChangeWindow()
     {
         RobustXamlLoader.Load(this);
+        IoCManager.InjectDependencies(this); // adventure tts
 
         NameSelectorSet.OnPressed += _ =>
         {
@@ -42,6 +43,8 @@ public sealed partial class VoiceMaskNameChangeWindow : FancyWindow
             _verbs.Add((Loc.GetString(verb.Name), verb.ID));
         }
         _verbs.Sort((a, b) => a.Item1.CompareTo(b.Item1));
+
+        ReloadVoices(); // c4llv07e tts
     }
 
     public void AddVerbs()

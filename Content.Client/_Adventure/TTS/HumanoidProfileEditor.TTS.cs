@@ -15,7 +15,6 @@ public sealed partial class HumanoidProfileEditor
     {
         _voiceList = _prototypeManager
             .EnumeratePrototypes<TTSVoicePrototype>()
-            .Where(o => o.RoundStart)
             .OrderBy(o => Loc.GetString(o.Name))
             .ToList();
 

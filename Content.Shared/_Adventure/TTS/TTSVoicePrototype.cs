@@ -23,12 +23,6 @@ public sealed class TTSVoicePrototype : IPrototype
     [DataField("speaker", required: true)]
     public string Speaker { get; } = string.Empty;
 
-    /// <summary>
-    /// Whether the species is available "at round start" (In the character editor)
-    /// </summary>
-    [DataField("roundStart")]
-    public bool RoundStart { get; } = true;
-
     [DataField("sponsorOnly")]
     public bool SponsorOnly { get; } = false;
 }
