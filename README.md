@@ -1,21 +1,7 @@
-[<img src="https://imagizer.imageshack.com/img923/7392/pIWR7b.png" alt="ASF" width="989" align="center">](https://github.com/Rxup/space-station-14)
-
----
-
-Backmen&Ataraxia - это форк [Space Wizards](https://github.com/space-wizards/space-station-14), ориентирующийся на идеи [СтароTG](https://github.com/tgstation/tgstation) и [Shiptest](https://github.com/shiptest-ss13/Shiptest) из Space Station 13, включая в это свои собственные идеи.
+Orienta Corporation - это форк [Backmen & Ataraxia]([https://github.com/Rxup/space-station-14]) с добавлением своего собственного контента
 
 Space Station 14 - это ремейк SS13, который работает на собственном движке [Robust Toolbox](https://github.com/space-wizards/Robust-Toolbox), написанном на C#.
 
-## Ссылки
-
-[<img src="https://i.imgur.com/XiS9QP5.png" alt="ASF" width="150" align="left">](https://github.com/AtaraxiaSpaceFoundation)
-**Ataraxia Space Foundation**<br>Специализируемся на разработке этого билда.
-
-[<img src="https://i.imgur.com/xMzKtYK.png" alt="Discord" width="150" align="left">](https://discord.gg/ss-14-backmen-ru-1053200453829132298)
-**Discord Server**<br>В космосе вас никто не услышит.
-
-[<img src="https://imagizer.imageshack.com/img922/4959/8KTh9r.png" alt="Wiki" width="150" align="left">](https://wiki.backmen.ru)
-**Wiki**<br>Что за блобы и с чем их едят?
 
 ## Сборка
 
@@ -42,23 +28,6 @@ Space Station 14 - это ремейк SS13, который работает н�
 
 > Предположительно, также, как и на Линуксе, сами разберётесь.
 
----
-
-## GptChat
-
-```toml
-[gpt]
-enabled = true
-api = "https://gigachat.devices.sberbank.ru/api/v1/"
-model = "GigaChat"
-token = ""
-giga_token = "ВСТАВИТЬ СЮДА СЕКРЕТНЫЙ КЛЮЧ"
-```
-
-[Токен](https://developers.sber.ru/portal/products/gigachat-api)
- запрашивается автоматически по секретному ключу и автоматически обновляется.
-
----
 
 ## Лицензия
 
