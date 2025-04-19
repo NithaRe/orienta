@@ -7,7 +7,6 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 108000 #50 hrs # Corvax-RoleTime
-  weight: 5
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
@@ -21,13 +20,21 @@
   - External
   - Detective
   - Cryogenics
-  #start-backmen: currency
-  minBankBalance: 150
-  maxBankBalance: 250
-  wageDepartment: Security
-  wage: 50
-  #end-backmen: currency
   special:
+  - !type:AddComponentSpecial
+    components:
+      - type: AntiPsychos 
+        time: 720000
+        refresh: false
+  # Orienta skills - start
+      - type: Skills
+        skills:
+          Medicine: 0.5
+          Melee: 0.5
+          Guns: 1.0
+          EnergyGuns: 1.0
+          Shuttle: 0.5
+  # Orienta skills - end
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
 
@@ -37,7 +44,8 @@
     eyes: ClothingEyesGlassesSecurity
     id: WardenPDA
     ears: ClothingHeadsetSecurity
+    pocket1: WeaponPistolMk58
   storage:
     back:
     - Flash
-    - HandHeldCameras
+    - MagazinePistol
