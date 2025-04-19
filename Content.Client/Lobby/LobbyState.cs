@@ -46,7 +46,7 @@ namespace Content.Client.Lobby
                 return;
             }
 
-            Lobby = (LobbyGui) _userInterfaceManager.ActiveScreen;
+            Lobby = (LobbyGui)_userInterfaceManager.ActiveScreen;
 
             var chatController = _userInterfaceManager.GetUIController<ChatUIController>();
             _gameTicker = _entityManager.System<ClientGameTicker>();
@@ -60,10 +60,6 @@ namespace Content.Client.Lobby
 
             var lobbyNameCvar = _cfg.GetCVar(CCVars.ServerLobbyName);
             var serverName = _baseClient.GameInfo?.ServerName ?? string.Empty;
-
-            Lobby.ServerName.Text = string.IsNullOrEmpty(lobbyNameCvar)
-                ? Loc.GetString("ui-lobby-title", ("serverName", serverName))
-                : lobbyNameCvar;
 
             var width = _cfg.GetCVar(CCVars.ServerLobbyRightPanelWidth);
             Lobby.RightSide.SetWidth = width;
@@ -205,10 +201,9 @@ namespace Content.Client.Lobby
             if (_gameTicker.ServerInfoBlob != null)
             {
                 Lobby!.ServerInfo.SetInfoBlob(_gameTicker.ServerInfoBlob);
-                Lobby!.LabelName.SetMarkup("[font=\"Bedstead\" size=20] The Confederation [/font]"); // BACKMEN EDIT
-                    // Don't forget that you're the BACKMEN, that you've always gone against the system and made the best build.
-                    // Don't forget that you're the Ataraxia, that you have always stood for the players to be happy and get what they deserve.
-                    // Glory to BACKMEN, HOP on Ataraxia
+                                                                                                     // Don't forget that you're the BACKMEN, that you've always gone against the system and made the best build.
+                                                                                                     // Don't forget that you're the Ataraxia, that you have always stood for the players to be happy and get what they deserve.
+                                                                                                     // Glory to BACKMEN, HOP on Ataraxia
                 Lobby!.ChangelogLabel.SetMarkup(Loc.GetString("ui-lobby-changelog")); // BACKMEN EDIT
             }
         }
@@ -216,10 +211,10 @@ namespace Content.Client.Lobby
         private void UpdateLobbySoundtrackInfo(LobbySoundtrackChangedEvent ev)
         {
 
-             if (
-                ev.SoundtrackFilename != null
-                && _resourceCache.TryGetResource<AudioResource>(ev.SoundtrackFilename, out var lobbySongResource)
-                )
+            if (
+               ev.SoundtrackFilename != null
+               && _resourceCache.TryGetResource<AudioResource>(ev.SoundtrackFilename, out var lobbySongResource)
+               )
             {
                 var lobbyStream = lobbySongResource.AudioStream;
 
@@ -241,14 +236,14 @@ namespace Content.Client.Lobby
 
         private void UpdateLobbyBackground()
         {
-            if (_gameTicker.LobbyBackground != null)
-            {
-                Lobby!.Background.SetRSI(_resourceCache.GetResource<RSIResource>(_gameTicker.LobbyBackground).RSI); // BACKMEN EDIT
-            }
-            else
-            {
-                Lobby!.Background.Texture = null;
-            }
+            //    if (_gameTicker.LobbyBackground != null)
+            //    {
+            //        Lobby!.Background.Texture = _resourceCache.GetResource<TextureResource>(_gameTicker.LobbyBackground );
+            //    }
+            //    else
+            //    {
+            //        Lobby!.Background.Texture = null;
+            //    }
 
         }
 
@@ -364,6 +359,5 @@ namespace Content.Client.Lobby
             };
         }
         // BACKMEN EDIT END
-        }
     }
-
+}

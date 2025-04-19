@@ -1,4 +1,3 @@
-<!-- BackMen and Ataraxia Lobby -->
 <lobbyUi:LobbyGui
     xmlns="https://spacestation14.io"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -6,13 +5,16 @@
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:style="clr-namespace:Content.Client.Stylesheets"
     xmlns:lobbyUi="clr-namespace:Content.Client.Lobby.UI"
+    xmlns:pllax="clr-namespace:Content.Client._Orienta.Parallax;assembly=Content.Client"
     xmlns:info="clr-namespace:Content.Client.Info"
     xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Chat.Widgets"
     xmlns:animatedBackground="clr-namespace:Content.Client.Backmen.UI.AnimatedBackground"
     xmlns:buttons="clr-namespace:Content.Client.Backmen.UI.Buttons">
-    <!-- Background -->
+    <!-- Background
     <animatedBackground:AnimatedBackgroundControl Access="Public" Name="Background" VerticalExpand="True" HorizontalExpand="True"
-                                                  Stretch="KeepAspectCovered" />
+                                                  Stretch="KeepAspectCovered" /> -->
+
+    <pllax:OrientaParallaxControl Access="Public" VerticalExpand="True" HorizontalExpand="True" Name="Background"/>
     <BoxContainer Name="MainContainer" VerticalExpand="True" HorizontalExpand="True" Orientation="Horizontal"
                   Margin="10 10 10 10" SeparationOverride="2">
         <SplitContainer State="Auto" ResizeMode="NotResizable" HorizontalExpand="True">
@@ -23,7 +25,6 @@
 
                     <BoxContainer Orientation="Vertical" HorizontalExpand="False" VerticalExpand="True"  VerticalAlignment="Bottom">
                         <controls:HLine Color="#404040" Thickness="1" Margin="0 1"/>
-                        <lobbyUi:ServerListBox Name="ServerListBox" Access="Public" MinSize="0 30" VerticalExpand="True" HorizontalExpand="False"  HorizontalAlignment="Stretch"/>
 
                     </BoxContainer>
 
@@ -103,8 +104,8 @@
                     <!-- Top row -->
                     <BoxContainer Orientation="Horizontal" MinSize="0 40" Name="HeaderContainer" Access="Public"
                                   SeparationOverride="4">
-                        <Label Name="ServerName" Access="Public" StyleClasses="LabelHeadingBigger" VAlign="Center"
-                               HorizontalExpand="True" HorizontalAlignment="Center" />
+                        <Label Margin="8 0 0 0" StyleClasses="LabelHeadingBigger" VAlign="Center"
+                               Text="Добро пожаловать на Orienta!" />
                     </BoxContainer>
                     <!-- Gold line -->
                     <controls:HLine Color="{x:Static style:StyleNano.NanoGold}" Thickness="2" />
