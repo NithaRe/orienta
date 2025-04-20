@@ -9235,7 +9235,7 @@ entities:
   - uid: 16114
     components:
     - type: MetaData
-      name: СБ шаттл
+      name: KDS шаттл
     - type: Transform
       pos: 73.750114,-5.304456
       parent: 446
@@ -18325,7 +18325,7 @@ entities:
   - uid: 18021
     components:
     - type: MetaData
-      desc: СБ отнимают его потому что ты круче их.
+      desc: KDS отнимают его потому что ты круче их.
       name: мужицкое одеяло
     - type: Transform
       pos: 412.5,370.5
@@ -57043,14 +57043,14 @@ entities:
       pos: 422.5,397.5
       parent: 1
     - type: FaxMachine
-      name: Гардеробная СБ
+      name: Гардеробная KDS
   - uid: 5132
     components:
     - type: Transform
       pos: 427.5,387.5
       parent: 1
     - type: FaxMachine
-      name: Каюта ГСБ
+      name: Каюта GK
   - uid: 5133
     components:
     - type: Transform
@@ -100718,7 +100718,7 @@ entities:
   - uid: 17524
     components:
     - type: MetaData
-      desc: Переключает ставни комнаты ГСБ
+      desc: Переключает ставни комнаты GK
       name: переключатель
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -114607,7 +114607,7 @@ entities:
   - uid: 9082
     components:
     - type: MetaData
-      desc: Переключает ставни шаттла СБ.
+      desc: Переключает ставни шаттла KDS.
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -3.4998322,4.2935977
@@ -121638,7 +121638,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: Гардероб СБ
+      id: Гардероб KDS
   - uid: 16027
     components:
     - type: Transform
@@ -121649,7 +121649,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: Переговорная СБ 2
+      id: Переговорная KDS 2
   - uid: 16028
     components:
     - type: Transform
@@ -121659,7 +121659,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: Переговорная СБ 1
+      id: Переговорная KDS 1
   - uid: 16029
     components:
     - type: Transform
@@ -121680,7 +121680,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: 'СБ: каюта ГСБ'
+      id: 'KDS: каюта GK'
   - uid: 16032
     components:
     - type: Transform
@@ -121691,7 +121691,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: 'СБ: спальня ГСБ'
+      id: 'KDS: спальня GK'
   - uid: 16033
     components:
     - type: Transform
@@ -121702,7 +121702,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: 'СБ: камера 1'
+      id: 'KDS: камера 1'
   - uid: 16034
     components:
     - type: Transform
@@ -121713,7 +121713,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: 'СБ: камера 2'
+      id: 'KDS: камера 2'
   - uid: 16035
     components:
     - type: Transform
@@ -121724,7 +121724,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: 'СБ: камера 3'
+      id: 'KDS: камера 3'
   - uid: 16036
     components:
     - type: Transform
@@ -121735,7 +121735,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: 'СБ: камера 4'
+      id: 'KDS: камера 4'
   - uid: 16037
     components:
     - type: Transform
@@ -121745,7 +121745,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: 'СБ: вход в оружейную общий'
+      id: 'KDS: вход в оружейную общий'
   - uid: 16038
     components:
     - type: Transform
@@ -121798,7 +121798,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: 'СБ: проход к перме'
+      id: 'KDS: проход к перме'
   - uid: 16043
     components:
     - type: Transform
@@ -121809,7 +121809,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: 'СБ: гардероб пермы'
+      id: 'KDS: гардероб пермы'
   - uid: 16045
     components:
     - type: Transform
@@ -121830,7 +121830,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: 'СБ: пилот коридор 1'
+      id: 'KDS: пилот коридор 1'
   - uid: 16047
     components:
     - type: Transform
@@ -121841,7 +121841,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: 'СБ: пилот коридор 2'
+      id: 'KDS: пилот коридор 2'
   - uid: 16048
     components:
     - type: Transform
@@ -121917,7 +121917,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: Гардероб СБ 2
+      id: Гардероб KDS 2
 - proto: SurveillanceCameraService
   entities:
   - uid: 15636

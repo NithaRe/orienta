@@ -56567,8 +56567,8 @@ entities:
       pos: 36.5,-24.5
       parent: 2
     - type: FaxMachine
-      name: Глава службы безопасности
-      destinationAddress: Глава службы безопасности
+      name: глава KDS
+      destinationAddress: глава KDS
   - uid: 7401
     components:
     - type: Transform
@@ -99932,7 +99932,7 @@ entities:
   - uid: 11384
     components:
     - type: MetaData
-      desc: Игрушечный детонатор, который, якобы, вызывает взрыв в кабинете главы СБ.
+      desc: Игрушечный детонатор, который, якобы, вызывает взрыв в кабинете главы KDS.
       name: игрушечный детонатор
     - type: Transform
       parent: 11379
@@ -107313,7 +107313,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: СБ - Гардероб
+      id: KDS - Гардероб
   - uid: 13724
     components:
     - type: Transform
@@ -107345,7 +107345,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: СБ - Кабинет детектива
+      id: KDS - Кабинет детектива
   - uid: 13727
     components:
     - type: Transform
@@ -107410,7 +107410,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: СБ - Комната казни
+      id: KDS - Комната казни
   - uid: 13733
     components:
     - type: Transform
@@ -107421,7 +107421,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: СБ - Пермабриг
+      id: KDS - Пермабриг
 - proto: SurveillanceCameraService
   entities:
   - uid: 13734

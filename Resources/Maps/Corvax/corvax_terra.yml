@@ -32248,7 +32248,7 @@ entities:
       pos: -11.5,-11.5
       parent: 2
     - type: FaxMachine
-      name: Дача ГСБ
+      name: Дача GK
   - uid: 2846
     components:
     - type: Transform
@@ -56705,7 +56705,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: кабинет ГСБ
+      id: кабинет GK
   - uid: 5479
     components:
     - type: Transform

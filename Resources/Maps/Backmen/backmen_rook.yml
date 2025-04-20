@@ -40579,7 +40579,7 @@ entities:
   - uid: 1852
     components:
     - type: MetaData
-      name: Подстанция СБ
+      name: Подстанция KDS
     - type: Transform
       pos: -28.5,-16.5
       parent: 2
@@ -40974,7 +40974,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraCommand
       nameSet: True
-      id: комната ГСБ
+      id: комната GK
   - uid: 7156
     components:
     - type: Transform
@@ -41535,7 +41535,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: Инвентарная СБ
+      id: Инвентарная KDS
   - uid: 7035
     components:
     - type: Transform

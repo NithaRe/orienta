@@ -4324,7 +4324,7 @@ entities:
   - uid: 93
     components:
     - type: MetaData
-      name: повязка службы безопасности
+      name: повязка KDS
     - type: Transform
       parent: 90
     - type: Physics

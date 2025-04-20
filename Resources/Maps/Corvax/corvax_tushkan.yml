@@ -36173,7 +36173,7 @@ entities:
       pos: -34.5,15.5
       parent: 2
     - type: FaxMachine
-      name: Кабинет Главы Службы Безопасности
+      name: Кабинет главы KDS
   - uid: 10773
     components:
     - type: Transform
@@ -62115,7 +62115,7 @@ entities:
       content: >+
         Для перевода шаттла в режим пилотирования отключите станционный якорь в инженерном отделе.
 
-        Не забудьте пристыковать СБ шаттл.
+        Не забудьте пристыковать KDS шаттл.
 
   - uid: 10769
     components:
@@ -71273,7 +71273,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: Около ГСБ
+      id: Около GK
 - proto: SurveillanceCameraService
   entities:
   - uid: 10394

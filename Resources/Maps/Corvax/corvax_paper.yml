@@ -51132,7 +51132,7 @@ entities:
       pos: 50.5,32.5
       parent: 2
     - type: WarpPoint
-      location: Офис ГСБ
+      location: Офис GK
 - proto: DefaultStationBeaconJanitorsCloset
   entities:
   - uid: 7158
@@ -51282,14 +51282,14 @@ entities:
       pos: 14.5,9.5
       parent: 2
     - type: WarpPoint
-      location: КПП СБ Карго
+      location: КПП KDS Карго
   - uid: 7174
     components:
     - type: Transform
       pos: 82.5,53.5
       parent: 2
     - type: WarpPoint
-      location: КПП СБ отбытие\прибытие
+      location: КПП KDS отбытие\прибытие
 - proto: DefaultStationBeaconService
   entities:
   - uid: 7175
@@ -57848,7 +57848,7 @@ entities:
       pos: 50.5,30.5
       parent: 2
     - type: FaxMachine
-      name: Офис Главы Службы Безопасности
+      name: Офис главы KDS
   - uid: 8257
     components:
     - type: Transform
@@ -85108,7 +85108,7 @@ entities:
       pos: 49.5,32.5
       parent: 2
     - type: Label
-      currentLabel: ГСБ
+      currentLabel: GK
 - proto: HolopadCommandQm
   entities:
   - uid: 18201
@@ -85433,7 +85433,7 @@ entities:
       pos: 82.5,53.5
       parent: 2
     - type: Label
-      currentLabel: КПП СБ прибытие
+      currentLabel: КПП KDS прибытие
 - proto: HolopadSecurityBreakroom
   entities:
   - uid: 1181
@@ -89907,7 +89907,7 @@ entities:
 
         [color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
 
-        [color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000 ПД-СБ[/bold]
+        [color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000 ПД-KDS[/bold]
 
         [color=#1b487e]░░░░██░░░████░███[/color]
 
@@ -89943,7 +89943,7 @@ entities:
 
         [color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
 
-        [color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000 ПД-СБ[/bold]
+        [color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Station XX-000 ПД-KDS[/bold]
 
         [color=#1b487e]░░░░██░░░████░███[/color]
 
@@ -105170,7 +105170,7 @@ entities:
       pos: 52.5,30.5
       parent: 2
     - type: SurveillanceCamera
-      id: Офис ГСБ
+      id: Офис GK
   - uid: 15110
     components:
     - type: Transform
@@ -105920,7 +105920,7 @@ entities:
       pos: 58.5,22.5
       parent: 2
     - type: SurveillanceCamera
-      id: Холл СБ
+      id: Холл KDS
   - uid: 15197
     components:
     - type: Transform

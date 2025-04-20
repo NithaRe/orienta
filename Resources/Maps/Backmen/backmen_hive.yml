@@ -15701,7 +15701,7 @@ entities:
   - uid: 18842
     components:
     - type: MetaData
-      name: отдых СБ
+      name: отдых KDS
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 88.5,20.5
@@ -15977,7 +15977,7 @@ entities:
   - uid: 18835
     components:
     - type: MetaData
-      name: Центральный ЛКП СБ
+      name: Центральный ЛКП KDS
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 81.5,13.5
@@ -15985,7 +15985,7 @@ entities:
   - uid: 18836
     components:
     - type: MetaData
-      name: Главный корридор СБ
+      name: Главный корридор KDS
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 71.5,9.5
@@ -59207,7 +59207,7 @@ entities:
       pos: 78.5,16.5
       parent: 1
     - type: WarpPoint
-      location: Комната главы службы безопасности
+      location: Комната главы KDS
 - proto: DefaultStationBeaconJanitorsCloset
   entities:
   - uid: 18015
@@ -59223,7 +59223,7 @@ entities:
       pos: 55.5,8.5
       parent: 1
     - type: WarpPoint
-      location: Коморка уборщиков - СБ
+      location: Коморка уборщиков - KDS
 - proto: DefaultStationBeaconKitchen
   entities:
   - uid: 16877

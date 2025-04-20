@@ -128,7 +128,7 @@
     totalIntensity: 100
     canCreateVacuum: false
 
-#------------------------РСУ СБ------------------------#
+#------------------------РСУ KDS------------------------#
 - type: entity
   id: securityTechnicianRCD
   parent: [ RCD, BaseSecurityContraband ]

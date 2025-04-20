@@ -1,3 +1,3 @@
-ent-ClothingBackpackSatchelHoS = сумка главы службы безопасности
+ent-ClothingBackpackSatchelHoS = сумка главы KDS
     .desc = Стильная кожаная чёрная сумка.
     .suffix = { "" }

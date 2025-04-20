@@ -2,7 +2,7 @@
   parent: ClothingNeckBase
   id: ClothingNeckCloakHosTorj
   name: торжественный плащ главы безопасности
-  description: торжественная версия плаща главы службы безопасности.
+  description: торжественная версия плаща главы KDS.
   components:
   - type: Sprite
     sprite: _Orienta/Clothing/Neck/hos.rsi

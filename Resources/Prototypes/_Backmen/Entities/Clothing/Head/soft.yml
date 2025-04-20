@@ -29,8 +29,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatPilotkaSec
-  name: пилотка СБ
-  description: Пилотка сотрудников СБ НТ, в основном используется силами космической обороны. Имеет двойную окантовку и кокарду НТ.
+  name: пилотка KDS
+  description: Пилотка сотрудников KDS НТ, в основном используется силами космической обороны. Имеет двойную окантовку и кокарду НТ.
   components:
     - type: Sprite
       sprite: Backmen/Clothing/Head/Soft/secpilotka.rsi

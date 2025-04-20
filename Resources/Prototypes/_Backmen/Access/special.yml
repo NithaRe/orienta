@@ -1,6 +1,6 @@
 - type: accessLevel
   id: SecurityTechnician
-  name: техник СБ
+  name: техник KDS
 
 - type: accessLevel
   id: Virology

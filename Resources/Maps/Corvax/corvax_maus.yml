@@ -19368,7 +19368,7 @@ entities:
   - uid: 17245
     components:
     - type: MetaData
-      name: ЛКП ГСБ
+      name: ЛКП GK
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -24.5,-3.5
@@ -56692,7 +56692,7 @@ entities:
   - uid: 19052
     components:
     - type: MetaData
-      name: ящик службы безопасности
+      name: ящик KDS
     - type: Transform
       pos: -22.5,4.5
       parent: 2
@@ -57754,7 +57754,7 @@ entities:
       pos: -20.5,-3.5
       parent: 2
     - type: NavMapBeacon
-      text: Кабинет ГСБ
+      text: Кабинет GK
 - proto: DefaultStationBeaconKitchen
   entities:
   - uid: 20914
@@ -63615,8 +63615,8 @@ entities:
       pos: -21.5,-3.5
       parent: 2
     - type: FaxMachine
-      name: Кабинет главы службы безопасности
-      destinationAddress: Кабинет ГСБ
+      name: Кабинет главы KDS
+      destinationAddress: Кабинет GK
   - uid: 6866
     components:
     - type: Transform
@@ -94096,7 +94096,7 @@ entities:
   - uid: 5919
     components:
     - type: MetaData
-      name: шкаф пилота службы безопасности
+      name: шкаф пилота KDS
     - type: Transform
       pos: -11.5,4.5
       parent: 2
@@ -96795,7 +96795,7 @@ entities:
 
         [color=#228B22]░░█░██░██░░██░█░░[/color]                [head=3]NanoTrasen[/head]
 
-        [color=#228B22]░░░░██░░[color=#d4af37]██[/color]░██░██░[/color]        [bold] Maus Station ЦК-СБ[/bold]
+        [color=#228B22]░░░░██░░[color=#d4af37]██[/color]░██░██░[/color]        [bold] Maus Station ЦК-KDS[/bold]
 
         [color=#228B22]░░░░██░░░████░[/color][color=#d4af37]███                         ★★★[/color] [color=black]
 
@@ -97208,7 +97208,7 @@ entities:
 
         [color=#228B22]░░█░██░██░░██░█░░[/color]                [head=3]NanoTrasen[/head]
 
-        [color=#228B22]░░░░██░░[color=#d4af37]██[/color]░██░██░[/color]        [bold] Maus Station ЦК-СБ[/bold]
+        [color=#228B22]░░░░██░░[color=#d4af37]██[/color]░██░██░[/color]        [bold] Maus Station ЦК-KDS[/bold]
 
         [color=#228B22]░░░░██░░░████░[/color][color=#d4af37]███                         ★★★[/color] [color=black]
 
@@ -97316,7 +97316,7 @@ entities:
 
         [color=#228B22]░░█░██░██░░██░█░░[/color]                [head=3]NanoTrasen[/head]
 
-        [color=#228B22]░░░░██░░[color=#d4af37]██[/color]░██░██░[/color]        [bold] Maus Station ЦК-СБ[/bold]
+        [color=#228B22]░░░░██░░[color=#d4af37]██[/color]░██░██░[/color]        [bold] Maus Station ЦК-KDS[/bold]
 
         [color=#228B22]░░░░██░░░████░[/color][color=#d4af37]███                         ★★★[/color] [color=black]
 
@@ -113751,7 +113751,7 @@ entities:
   - uid: 12148
     components:
     - type: MetaData
-      name: подстанция СБ
+      name: подстанция KDS
     - type: Transform
       pos: -6.5,-2.5
       parent: 2

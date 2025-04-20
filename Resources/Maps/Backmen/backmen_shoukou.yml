@@ -31811,7 +31811,7 @@ entities:
       pos: 33.5,-10.5
       parent: 34
     - type: WarpPoint
-      location: Комната главы службы безопасности
+      location: Комната главы KDS
 - proto: DefaultStationBeaconJanitorsCloset
   entities:
   - uid: 11941

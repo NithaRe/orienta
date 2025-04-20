@@ -320,7 +320,7 @@
 - type: listing
   id: UplinkDEagle
   name: Пустынный орёл
-  description: Большой, стильный, мощный дигл на базе .45 калибра, был создан для охоты на слонов, но чем СБешник не слон? Не так-ли?
+  description: Большой, стильный, мощный дигл на базе .45 калибра, был создан для охоты на слонов, но чем KDSешник не слон? Не так-ли?
   icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Pistols/deagle/big.rsi, state: icon }
   productEntity: WeaponPistolDEagle
   cost:

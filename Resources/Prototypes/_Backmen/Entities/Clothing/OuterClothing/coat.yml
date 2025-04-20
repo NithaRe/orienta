@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingOuterWinterCoat
   id: Clothinghoscoat
-  name: Пальто ГСБ
-  description: Обычное пальто главы СБ, ничего примечательного.
+  name: Пальто GK
+  description: Обычное пальто главы KDS, ничего примечательного.
   components:
   - type: Sprite
     sprite: Backmen/Clothing/OuterClothing/Coats/coathosbelov.rsi
@@ -23,7 +23,7 @@
 - type: entity
   parent: [ClothingOuterCoatSecurityOvercoat, AllowSuitStorageClothing]
   id: ClothingOuterCoatSecurityOfficerOvercoat
-  name: шинель офицер СБ
+  name: шинель офицер KDS
   description: Легкобронированная кожаная шинель, предназначенная для повседневной носки офицерами. Имеет логотип компании Nanotrasen Security.
   components:
   - type: Sprite

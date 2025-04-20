@@ -407,7 +407,7 @@
 
 - type: entity
   name: пояс охраны спецсил
-  description: Может вмещать различное снаряжение службы безопасности, такое как наручники и вспышки.
+  description: Может вмещать различное снаряжение KDS, такое как наручники и вспышки.
   parent: ClothingBeltSecurity
   id: ClothingBeltSecuritySuper
   components:
@@ -429,7 +429,7 @@
 
 - type: entity
   name: пояс охраны спецсил
-  description: Может вмещать различное снаряжение службы безопасности, такое как наручники и вспышки.
+  description: Может вмещать различное снаряжение KDS, такое как наручники и вспышки.
   parent: ClothingBeltSecurity
   id: ClothingBeltSecurityCentComSecurity
   components:

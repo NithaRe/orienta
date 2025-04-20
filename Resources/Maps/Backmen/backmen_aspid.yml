@@ -66582,7 +66582,7 @@ entities:
       pos: -16.5,58.5
       parent: 1
     - type: FaxMachine
-      name: ГСБ
+      name: GK
   - uid: 875
     components:
     - type: Transform
@@ -120065,7 +120065,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraCommand
       nameSet: True
-      id: Офис ГСБ
+      id: Офис GK
   - uid: 16458
     components:
     - type: Transform

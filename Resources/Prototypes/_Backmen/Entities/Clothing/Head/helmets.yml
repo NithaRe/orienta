@@ -426,8 +426,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHelmetCentcom
-  name: шлем службы безопасности Центком
-  description: Модифицированный шлем службы безопасности, предназначенный для нужд охраны станций Центрального командования.
+  name: шлем KDS Центком
+  description: Модифицированный шлем KDS, предназначенный для нужд охраны станций Центрального командования.
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Head/Helmets/centcom_sec_helmet.rsi

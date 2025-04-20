@@ -136328,7 +136328,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: КПП-СБ Инженерный
+      id: КПП-KDS Инженерный
   - uid: 14969
     components:
     - type: Transform
@@ -136339,7 +136339,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: КПП-СБ Научный
+      id: КПП-KDS Научный
   - uid: 14971
     components:
     - type: Transform
@@ -136349,7 +136349,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: КПП-СБ Снабжение
+      id: КПП-KDS Снабжение
   - uid: 14972
     components:
     - type: Transform
@@ -136360,7 +136360,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: КПП-СБ Сервисный
+      id: КПП-KDS Сервисный
   - uid: 17053
     components:
     - type: Transform
@@ -161261,7 +161261,7 @@ entities:
       pos: 116.5,113.5
       parent: 1
     - type: WarpPoint
-      location: КПП СБ над баром
+      location: КПП KDS над баром
 - proto: WaterCooler
   entities:
   - uid: 778

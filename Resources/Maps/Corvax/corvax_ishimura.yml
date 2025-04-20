@@ -82710,9 +82710,9 @@ entities:
       pos: 32.5,-2.5
       parent: 2
     - type: NavMapBeacon
-      text: Офис ГСБ
+      text: Офис GK
     - type: WarpPoint
-      location: Офис ГСБ
+      location: Офис GK
 - proto: DefaultStationBeaconJanitorsCloset
   entities:
   - uid: 9724
@@ -82882,45 +82882,45 @@ entities:
       pos: -85.5,13.5
       parent: 2
     - type: NavMapBeacon
-      text: КПП СБ - Инженерный
+      text: КПП KDS - Инженерный
     - type: WarpPoint
-      location: КПП СБ - Инженерный
+      location: КПП KDS - Инженерный
   - uid: 9739
     components:
     - type: Transform
       pos: -59.5,8.5
       parent: 2
     - type: NavMapBeacon
-      text: КПП СБ - Снабжение
+      text: КПП KDS - Снабжение
     - type: WarpPoint
-      location: КПП СБ - Снабжение
+      location: КПП KDS - Снабжение
   - uid: 9740
     components:
     - type: Transform
       pos: -61.5,21.5
       parent: 2
     - type: NavMapBeacon
-      text: КПП СБ - Прибытие 2
+      text: КПП KDS - Прибытие 2
     - type: WarpPoint
-      location: КПП СБ - Прибытие 2
+      location: КПП KDS - Прибытие 2
   - uid: 9741
     components:
     - type: Transform
       pos: -44.5,0.5
       parent: 2
     - type: NavMapBeacon
-      text: КПП СБ - Сервис
+      text: КПП KDS - Сервис
     - type: WarpPoint
-      location: КПП СБ - Сервис
+      location: КПП KDS - Сервис
   - uid: 29384
     components:
     - type: Transform
       pos: 2.5,8.5
       parent: 2
     - type: NavMapBeacon
-      text: КПП СБ МЕД
+      text: КПП KDS МЕД
     - type: WarpPoint
-      location: КПП СБ МЕД
+      location: КПП KDS МЕД
 - proto: DefaultStationBeaconServerRoom
   entities:
   - uid: 9743
@@ -93035,7 +93035,7 @@ entities:
       pos: 33.5,-0.5
       parent: 2
     - type: FaxMachine
-      name: Кабинет ГСБ
+      name: Кабинет GK
   - uid: 11166
     components:
     - type: Transform
@@ -93056,8 +93056,8 @@ entities:
       pos: 37.5,-3.5
       parent: 2
     - type: FaxMachine
-      name: Офис ГСБ
-      destinationAddress: Офис ГСБ
+      name: Офис GK
+      destinationAddress: Офис GK
   - uid: 11169
     components:
     - type: Transform
@@ -93100,7 +93100,7 @@ entities:
       pos: -54.5,43.5
       parent: 2
     - type: FaxMachine
-      name: КПП СБ Отбытия
+      name: КПП KDS Отбытия
   - uid: 11176
     components:
     - type: Transform
@@ -140082,7 +140082,7 @@ entities:
       - stampedColor: '#A23E3EFF'
         stampedName: stamp-component-stamped-name-denied
       content: >-
-        Я Пуна-Пуна хачу служить в ЭСБЭ. Вазьмите меня в ЭСБЭ.
+        Я Пуна-Пуна хачу служить в ЭKDSЭ. Вазьмите меня в ЭKDSЭ.
 
         Соблюдаюсь обещать процедурные стандартные рабочи.
 
@@ -161611,7 +161611,7 @@ entities:
   - uid: 19237
     components:
     - type: MetaData
-      name: подстанция СБ
+      name: подстанция KDS
     - type: Transform
       pos: 15.5,-12.5
       parent: 2

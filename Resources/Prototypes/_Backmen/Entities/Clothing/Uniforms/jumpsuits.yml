@@ -394,8 +394,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCentcomPrivateOfficer
-  name: Униформа Приватного Офицера СБ ЦК
-  description: Полевая униформа Приватного Офицера СБ ЦК
+  name: Униформа Приватного Офицера KDS ЦК
+  description: Полевая униформа Приватного Офицера KDS ЦК
   components:
     - type: Sprite
       sprite: Backmen/Clothing/Uniforms/jumpsuit/centcom-private_officer.rsi

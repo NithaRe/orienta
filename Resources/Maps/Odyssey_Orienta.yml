@@ -54491,7 +54491,7 @@ entities:
   - uid: 6962
     components:
     - type: MetaData
-      name: Подстанция Службы Безопасности
+      name: Подстанция KDS
     - type: Transform
       pos: 10.5,-6.5
       parent: 2

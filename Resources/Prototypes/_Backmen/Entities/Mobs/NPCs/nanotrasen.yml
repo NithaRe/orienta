@@ -1,9 +1,9 @@
 ﻿- type: entity
-  name: Сотрудник СБ
+  name: Сотрудник KDS
   id: MobSecurityNT
   parent: MobBaseNpc
-  suffix: suppa НТ СБ
-  description: Сотрудник СБ, вооруженный стан-дубинкой для охраны экипажа.
+  suffix: suppa НТ KDS
+  description: Сотрудник KDS, вооруженный стан-дубинкой для охраны экипажа.
   components:
   - type: MeleeWeapon
     angle: 0
@@ -44,11 +44,11 @@
       sprite: Objects/Weapons/Melee/stunbaton.rsi
 
 - type: entity
-  name: Сотрудник СБ
+  name: Сотрудник KDS
   id: MobSecurityNTDisabler
   parent: MobBaseNpc
-  suffix: suppa НТ СБ Disabler
-  description: Сотрудник СБ, вооруженный станнером для охраны экипажа.
+  suffix: suppa НТ KDS Disabler
+  description: Сотрудник KDS, вооруженный станнером для охраны экипажа.
   components:
   - type: HTN
     rootTask:
@@ -98,20 +98,20 @@
       sprite: Objects/Weapons/Guns/Battery/disabler.rsi
 
 - type: entity
-  name: Сотрудник СБ
+  name: Сотрудник KDS
   id: MobGuardSecurityNT
   parent: MobSecurityNT
-  suffix: suppa Guard НТ СБ
+  suffix: suppa Guard НТ KDS
   components:
   - type: HTN
     rootTask:
       task: NPCGuardCompound
 
 - type: entity
-  name: Сотрудник СБ
+  name: Сотрудник KDS
   id: MobGuardSecurityNTDisabler
   parent: MobSecurityNTDisabler
-  suffix: suppa Guard НТ СБ Disabler
+  suffix: suppa Guard НТ KDS Disabler
   components:
   - type: HTN
     rootTask:
@@ -123,8 +123,8 @@
   name: Сотрудник ССБЦК
   id: MobSecurityNTPistol
   parent: MobBaseNpc
-  suffix: suppa НТ СБ ЦК Pistol
-  description: Сотрудник Специальной Службы Безопасности ЦК, вооруженный пистолетом для Центрального Командования от посторонних.
+  suffix: suppa НТ KDS ЦК Pistol
+  description: Сотрудник Специальной KDS ЦК, вооруженный пистолетом для Центрального Командования от посторонних.
   components:
   - type: HTN
     rootTask:
@@ -176,7 +176,7 @@
 - type: entity
   id: MobGuardSecurityNTPistol
   parent: MobSecurityNTPistol
-  suffix: suppa Guard НТ СБ ЦК Pistol
+  suffix: suppa Guard НТ KDS ЦК Pistol
   components:
   - type: HTN
     rootTask:
