@@ -22,8 +22,8 @@
 - type: playTimeTracker
   id: JobCargoTechnician
 
-- type: playTimeTracker
-  id: JobCentralCommandOfficial
+#- type: playTimeTracker
+#  id: JobCentralCommandOfficial
 
 - type: playTimeTracker
   id: JobChaplain
