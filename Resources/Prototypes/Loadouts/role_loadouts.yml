@@ -588,6 +588,40 @@
   - Inventory # Corvax-Loadouts
 
 - type: roleLoadout
+  id: JobPsychiatrist
+  groups:
+  - Inventory # Corvax-Loadouts
+  - GroupTankHarness
+  - MedicalDoctorHead
+  - MedicalMask
+  - MedicalDoctorJumpsuit
+  - MedicalGloves
+  - MedicalBackpack
+  - MedicalDoctorOuterClothing
+  - MedicalShoes
+  - MedicalDoctorPDA
+  - Glasses
+  - SurvivalMedical
+  - Trinkets
+  - GroupSpeciesBreathToolMedical
+
+- type: roleLoadout
+  id: JobMedBrother
+  groups:
+  - Inventory # Corvax-Loadouts
+  - GroupTankHarness
+  - MedicalDoctorHead
+  - MedicalMask
+  - MedicalGloves
+  - MedicalBackpack
+  - MedicalDoctorOuterClothing
+  - MedicalShoes
+  - Glasses
+  - SurvivalMedical
+  - Trinkets
+  - GroupSpeciesBreathToolMedical
+
+- type: roleLoadout
   id: JobMedicalDoctor
   groups:
   - Werx #backmen
@@ -601,13 +635,13 @@
   - MedicalBackpack
   - MedicalDoctorOuterClothing
   - MedicalShoes
-  - MedicalDoctorPDA
   - Glasses
   - Medals #backmen
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
   - Inventory # Corvax-Loadouts
+
 
 - type: roleLoadout
   id: JobMedicalIntern

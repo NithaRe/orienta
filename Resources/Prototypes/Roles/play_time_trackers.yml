@@ -22,8 +22,8 @@
 - type: playTimeTracker
   id: JobCargoTechnician
 
-- type: playTimeTracker
-  id: JobCentralCommandOfficial
+#- type: playTimeTracker
+#  id: JobCentralCommandOfficial
 
 - type: playTimeTracker
   id: JobChaplain
@@ -104,6 +104,12 @@
   id: JobParamedic
 
 - type: playTimeTracker
+  id: JobPsychiatrist
+
+- type: playTimeTracker
+  id: JobMedBrother
+
+- type: playTimeTracker
   id: JobPsychologist
 
 - type: playTimeTracker
@@ -153,4 +159,3 @@
 
 - type: playTimeTracker
   id: JobZookeeper
-

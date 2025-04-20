@@ -43,6 +43,7 @@
     <Compile Update="Backmen\Species\Shadowkin\Systems\ShadowkinPowerSystem.Teleport.cs">
       <DependentUpon>ShadowkinPowerSystem.cs</DependentUpon>
     </Compile>
+    <Folder Include="_Orienta\AntiPsychos\" />
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
 </Project>
