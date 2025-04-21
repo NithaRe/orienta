@@ -1,3 +1,4 @@
+using Content.Shared._Adventure.ACVar; // c4llv07e tts
 using System.IO;
 using System.Linq;
 using System.Numerics;
@@ -219,17 +220,13 @@ namespace Content.Client.Lobby.UI
 
             #endregion Gender
 
-            // Corvax-TTS-Start
-            #region Voice
-
-            if (configurationManager.GetCVar(CCCVars.TTSEnabled))
+            // c4llv07e tts begin
+            if (configurationManager.GetCVar(ACVars.TTSEnabled))
             {
                 TTSContainer.Visible = true;
                 InitializeVoice();
             }
-
-            #endregion
-            // Corvax-TTS-End
+            // c4llv07e tts end
 
             RefreshSpecies();
 
@@ -627,11 +624,6 @@ namespace Content.Client.Lobby.UI
             _species.AddRange(_prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart));
             var speciesIds = _species.Select(o => o.ID).ToList();
 
-            // Corvax-Sponsors-Start
-            if (_sponsorsMgr != null)
-                _species = _species.Where(p => !p.SponsorOnly || _sponsorsMgr.GetClientPrototypes().Contains(p.ID)).ToList();
-            // Corvax-Sponsors-End
-
             for (var i = 0; i < _species.Count; i++)
             {
                 var name = Loc.GetString(_species[i].Name);
@@ -716,6 +708,8 @@ namespace Content.Client.Lobby.UI
             IsDirty = false;
             JobOverride = null;
 
+            UpdateTTSVoicesControls(); // c4llv07e tts
+
             UpdateNameEdit();
             UpdateFlavorTextEdit();
             UpdateSexControls();
@@ -726,7 +720,6 @@ namespace Content.Client.Lobby.UI
             UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
-            UpdateTTSVoicesControls(); // Corvax-TTS
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
@@ -1157,8 +1150,9 @@ namespace Content.Client.Lobby.UI
                     break;
             }
 
+            UpdateTTSVoicesControls(); // c4llv07e tts
+
             UpdateGenderControls();
-            UpdateTTSVoicesControls(); // Corvax-TTS
             Markings.SetSex(newSex);
             ReloadPreview();
         }
@@ -1168,14 +1162,6 @@ namespace Content.Client.Lobby.UI
             Profile = Profile?.WithGender(newGender);
             ReloadPreview();
         }
-
-        // Corvax-TTS-Start
-        private void SetVoice(string newVoice)
-        {
-            Profile = Profile?.WithVoice(newVoice);
-            IsDirty = true;
-        }
-        // Corvax-TTS-End
 
         private void SetSpecies(string newSpecies)
         {

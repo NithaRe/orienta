@@ -108,7 +108,7 @@ namespace Content.Server.Preferences.Managers
             var sponsorPrototypes = _sponsors != null && _sponsors.TryGetServerPrototypes(session.UserId, out var prototypes)
                 ? prototypes.ToArray()
                 : [];
-            profile.EnsureValid(session, _dependencies, sponsorPrototypes);
+            profile.EnsureValid(session, _dependencies);
             // Corvax-Sponsors-End
 
             var profiles = new Dictionary<int, ICharacterProfile>(curPrefs.Characters)
@@ -208,7 +208,7 @@ namespace Content.Server.Preferences.Managers
                         var sponsorPrototypes = _sponsors != null && _sponsors.TryGetServerPrototypes(session.UserId, out var prototypes)
                             ? prototypes.ToArray()
                             : [];
-                        profile.EnsureValid(session, _dependencies, sponsorPrototypes);
+                        profile.EnsureValid(session, _dependencies);
                     }
                     // Corvax-Sponsors-End
                     prefsData.Prefs = prefs;
@@ -317,10 +317,9 @@ namespace Content.Server.Preferences.Managers
             // Clean up preferences in case of changes to the game,
             // such as removed jobs still being selected.
 
-            var sponsorPrototypes = _sponsors != null && _sponsors.TryGetServerPrototypes(session.UserId, out var prototypes) ? prototypes.ToArray() : []; // Corvax-Sponsors
             return new PlayerPreferences(prefs.Characters.Select(p =>
             {
-                return new KeyValuePair<int, ICharacterProfile>(p.Key, p.Value.Validated(session, collection, sponsorPrototypes));
+                return new KeyValuePair<int, ICharacterProfile>(p.Key, p.Value.Validated(session, collection));
             }), prefs.SelectedCharacterIndex, prefs.AdminOOCColor);
         }
 

@@ -7,7 +7,7 @@ using Content.Shared.Decals;
 using Content.Shared.Examine;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
-using Content.Shared.Corvax.TTS;
+using Content.Shared._Adventure.TTS;
 using Content.Shared.Humanoid.Events;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
@@ -110,7 +110,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
             }
         }
 
-        profile.EnsureValid(session, collection!, sponsorPrototypes);
+        profile.EnsureValid(session, collection!);
         return profile;
     }
 
@@ -492,7 +492,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         EnsureDefaultMarkings(uid, humanoid);
-        SetTTSVoice(uid, profile.Voice, humanoid); // Corvax-TTS
+        SetTTSVoice(uid, profile.Voice, humanoid); // c4llv07e tts
 
         humanoid.Gender = profile.Gender;
         if (TryComp<GrammarComponent>(uid, out var grammar))
@@ -583,18 +583,6 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
             Dirty(uid, humanoid);
     }
 
-    // Corvax-TTS-Start
-    // ReSharper disable once InconsistentNaming
-    public void SetTTSVoice(EntityUid uid, string voiceId, HumanoidAppearanceComponent humanoid)
-    {
-        if (!TryComp<TTSComponent>(uid, out var comp))
-            return;
-
-        humanoid.Voice = voiceId;
-        comp.VoicePrototypeId = voiceId;
-    }
-    // Corvax-TTS-End
-
     /// <summary>
     /// Takes ID of the species prototype, returns UI-friendly name of the species.
     /// </summary>
@@ -629,4 +617,16 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         return Loc.GetString("identity-age-old");
     }
+
+    // c4llv07e tts begin
+    // ReSharper disable once InconsistentNaming
+    public void SetTTSVoice(EntityUid uid, string voiceId, HumanoidAppearanceComponent humanoid)
+    {
+        if (!TryComp<TTSComponent>(uid, out var comp))
+            return;
+
+        humanoid.Voice = voiceId;
+        comp.VoicePrototypeId = voiceId;
+    }
+    // c4llv07e tts end
 }

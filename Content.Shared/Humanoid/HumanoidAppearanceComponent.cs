@@ -1,4 +1,4 @@
-using Content.Shared.Corvax.TTS;
+using Content.Shared._Adventure.TTS;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Inventory;
@@ -14,6 +14,14 @@ namespace Content.Shared.Humanoid;
 public sealed partial class HumanoidAppearanceComponent : Component
 {
     public MarkingSet ClientOldMarkings = new();
+
+    // Adventure tts begin
+    /// <summary>
+    ///     Current voice. Used for correct cloning.
+    /// </summary>
+    [DataField]
+    public ProtoId<TTSVoicePrototype> Voice { get; set; } = TTSConfig.DefaultVoice;
+    // Adventure tts end
 
     [DataField, AutoNetworkedField]
     public MarkingSet MarkingSet = new();
@@ -47,14 +55,6 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     [DataField(required: true), AutoNetworkedField]
     public ProtoId<SpeciesPrototype> Species { get; set; }
-
-    // Corvax-TTS-Start
-    /// <summary>
-    ///     Current voice. Used for correct cloning.
-    /// </summary>
-    [DataField("voice")]
-    public ProtoId<TTSVoicePrototype> Voice { get; set; } = SharedHumanoidAppearanceSystem.DefaultVoice;
-    // Corvax-TTS-End
 
     /// <summary>
     ///     The initial profile and base layers to apply to this humanoid.

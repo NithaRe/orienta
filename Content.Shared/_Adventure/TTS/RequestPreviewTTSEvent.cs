@@ -1,6 +1,6 @@
-﻿using Robust.Shared.Serialization;
+using Robust.Shared.Serialization;
 
-namespace Content.Shared.Corvax.TTS;
+namespace Content.Shared._Adventure.TTS;
 
 // ReSharper disable once InconsistentNaming
 [Serializable, NetSerializable]

@@ -2,7 +2,7 @@ using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.DebugMon;
-using Content.Client.Corvax.TTS;
+using Content.Client._Adventure.TTS;
 using Content.Client.Options;
 using Content.Client.Eui;
 using Content.Client.Fullscreen;

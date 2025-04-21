@@ -1,3 +1,4 @@
+using Content.Shared._Adventure.ACVar; // c4llv07e tts
 using Content.Client.Administration.Managers;
 using Content.Client.Audio;
 using Content.Shared.CCVar;
@@ -29,12 +30,12 @@ public sealed partial class AudioTab : Control
             scale: ContentAudioSystem.MasterVolumeMultiplier);
         masterVolume.ImmediateValueChanged += OnMasterVolumeSliderChanged;
 
-        // Corvax-TTS-Start
+        // c4llv07e tts begin
         Control.AddOptionPercentSlider(
-            CCCVars.TTSVolume,
+            ACVars.TTSVolume,
             SliderVolumeTts,
             scale: ContentAudioSystem.TtsMultiplier);
-        // Corvax-TTS-End
+        // c4llv07e tts end
 
         Control.AddOptionPercentSlider(
             CVars.MidiVolume,
@@ -57,16 +58,6 @@ public sealed partial class AudioTab : Control
             scale: ContentAudioSystem.LobbyMultiplier);
 
         Control.AddOptionPercentSlider(
-            CCCVars.TTSVolume,
-            SliderTtsVolume,
-            scale: ContentAudioSystem.TtsMultiplier); // Corvax-TTS
-
-        Control.AddOptionPercentSlider(
-            CCCVars.TTSAnnounceVolume,
-            SliderTtsAnnounceVolume,
-            scale: ContentAudioSystem.TtsAnnounceMultiplier); // Corvax-TTS
-
-        Control.AddOptionPercentSlider(
             CCVars.InterfaceVolume,
             SliderVolumeInterface,
             scale: ContentAudioSystem.InterfaceMultiplier);
@@ -82,6 +73,7 @@ public sealed partial class AudioTab : Control
         Control.AddOptionCheckBox(CCVars.EventMusicEnabled, EventMusicCheckBox);
         Control.AddOptionCheckBox(CCVars.AdminSoundsEnabled, AdminSoundsCheckBox);
         Control.AddOptionCheckBox(CCVars.BwoinkSoundEnabled, BwoinkSoundCheckBox);
+        Control.AddOptionCheckBox(ACVars.TTSClientEnabled, TtsClientCheckBox); // c4llv07e tts
 
         Control.Initialize();
     }

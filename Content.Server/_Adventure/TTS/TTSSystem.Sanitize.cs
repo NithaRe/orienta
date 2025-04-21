@@ -1,8 +1,8 @@
-﻿using System.Text;
+using System.Text;
 using System.Text.RegularExpressions;
 using Content.Server.Chat.Systems;
 
-namespace Content.Server.Corvax.TTS;
+namespace Content.Server._Adventure.TTS;
 
 // ReSharper disable once InconsistentNaming
 public sealed partial class TTSSystem
@@ -137,9 +137,18 @@ public sealed partial class TTSSystem
             {"с4", "Си 4"}, // cyrillic
             {"c4", "Си 4"}, // latinic
             {"бсс", "Бэ Эс Эс"},
-            {"сии", "Эс И И"},
-            {"ии", "И И"},
-            {"опз", "О Пэ Зэ"},
+            // Adventure-Stars
+            {"бм", "Бэ Эм"},
+            {"бма", "Бэ Эма"},
+            {"бму", "Бэ Эму"},
+            {"бмом", "Бэ Эмом"},
+            {"рпс", "Эр Пэ Эс"},
+            {"опрс", "О Пэ Эр Эс"},
+            {"осб", "О Эс Бэ"},
+            {"ттс", "Тэ Тэ Эс"},
+            {"рсу", "Эр Сэ У"},
+            {"упт", "У Пэ Тэ"},
+            // Adventure-End
         };
 
     private static readonly IReadOnlyDictionary<string, string> ReverseTranslit =
