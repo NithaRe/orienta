@@ -110,7 +110,6 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<ServerApi>().Initialize();
 
                 IoCManager.Resolve<TTSManager>().Initialize(); // c4llv07e tts
-                IoCManager.Resolve<AdventureConfigManager>().Initialize(); // AdvSpace Config
 
                 _voteManager.Initialize();
                 _updateManager.Initialize();

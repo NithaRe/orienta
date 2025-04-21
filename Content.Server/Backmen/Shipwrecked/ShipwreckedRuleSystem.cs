@@ -49,7 +49,7 @@ using Content.Shared.Buckle.Components;
 using Content.Shared.Chat;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.CombatMode.Pacification;
-using Content.Shared.Corvax.TTS;
+using Content.Shared._Adventure.TTS;
 using Content.Shared.Damage;
 using Content.Shared.Dataset;
 using Content.Shared.Doors.Components;

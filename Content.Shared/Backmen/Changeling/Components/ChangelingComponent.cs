@@ -1,4 +1,4 @@
-using Content.Shared.Corvax.TTS;
+using Content.Shared._Adventure.TTS;
 using Content.Shared.Humanoid;
 using Content.Shared.StatusIcon;
 using Robust.Shared.Audio;

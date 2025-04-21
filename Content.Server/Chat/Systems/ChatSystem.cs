@@ -5,8 +5,8 @@ using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Backmen.Chat;
 using Content.Server.Backmen.Language;
+using Content.Server._Adventure.TTS;
 using Content.Server.Chat.Managers;
-using Content.Server.Corvax.TTS;
 using Content.Server.GameTicking;
 using Content.Server.Players;
 using Content.Server.Popups;
@@ -629,19 +629,6 @@ private void SendEntityWhisper(
 
         _replay.RecordServerMessage(new ChatMessage(ChatChannel.Whisper, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
 
-        RaiseLocalEvent(source,
-            new EntitySpokeLanguageEvent(
-                Filter.Empty().AddPlayers(orgMsg),
-                Filter.Empty().AddPlayers(obsMsg),
-                source,
-                message,
-                originalMessage,
-                channel,
-                true,
-                obfuscatedMessage,
-                languageObfuscatedMessage,
-                languageObfuscatedMessageLongRange),
-            true);
         var ev = new EntitySpokeEvent(source, message, originalMessage, channel, obfuscatedMessage, language);
         RaiseLocalEvent(source, ev, true);
         if (!hideLog)
@@ -852,20 +839,6 @@ private void SendEntityWhisper(
 
         _replay.RecordServerMessage(new ChatMessage(channel, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
 
-        if ((orgMsg.Count > 0 || obsMsg.Count > 0) && (channel & ChatChannel.Local) != 0)
-        {
-            RaiseLocalEvent(source,
-                new EntitySpokeLanguageEvent(
-                    Filter.Empty().AddPlayers(orgMsg),
-                    Filter.Empty().AddPlayers(obsMsg),
-                    source,
-                    message,
-                    wrappedMessage,
-                    null,
-                    false,
-                    obfuscated)
-                );
-        }
     }
 
     /// <summary>
