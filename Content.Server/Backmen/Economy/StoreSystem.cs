@@ -42,22 +42,23 @@ public sealed partial class StoreSystem
         if (msg.Actor is not { Valid: true } buyer)
             return false;
 
-        //check that we have enough money
+        // Check that we have enough money
         foreach (var currency in listing.Cost)
         {
-            if (!component.Balance.TryGetValue(currency.Key, out var balance)) // || balance < currency.Value
+            if (!component.Balance.TryGetValue(currency.Key, out var balance) || balance < currency.Value)
             {
-                return false;
-            }
-
-            if (balance >= currency.Value)
-            {
-                return false; // если уже достаточно валюты в автомате то нечего не делаем -_- (например рация ЯО, да-да-да, рация ЯО с покупкой с баланса банка, или баланс банка в ТК :))
                 _PlayDeny(uid);
-                _popup.PopupEntity(Loc.GetString("store-no-money"),uid);
+                _popup.PopupEntity(Loc.GetString("store-no-money"), uid);
+                return false;
             }
         }
 
-        return true; // успешно списано?
+        // Deduct the cost from the balance
+        foreach (var currency in listing.Cost)
+        {
+            component.Balance[currency.Key] -= currency.Value;
+        }
+
+        return true; // Successfully deducted
     }
 }
