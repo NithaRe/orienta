@@ -15,12 +15,6 @@
   access:
   - Medical
   - Maintenance
-  #start-backmen: currency
-  minBankBalance: 150
-  maxBankBalance: 250
-  wageDepartment: Medical
-  wage: 25
-  #end-backmen: currency
   special:
   - !type:AddComponentSpecial
     components:

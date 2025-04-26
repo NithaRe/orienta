@@ -9,10 +9,6 @@
   access:
   - Service
   - Maintenance
-  #start-backmen: currency
-  minBankBalance: 150
-  maxBankBalance: 250
-  #end-backmen: currency
   special:
   - !type:GiveItemOnHolidaySpecial
     holiday: BoxingDay

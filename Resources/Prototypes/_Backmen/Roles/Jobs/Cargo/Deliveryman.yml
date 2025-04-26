@@ -29,7 +29,6 @@
     shoes: ClothingShoesColorBlack
     id: DeliveryPDA
     ears: ClothingHeadsetService
-    pocket1: Eftpos
     pocket2: FoodBoxPizzaFilled
   #innerClothingSkirt: ClothingUniformJumpsuitDeliverygirl
   #satchel: ClothingBackpackSatchelFilled

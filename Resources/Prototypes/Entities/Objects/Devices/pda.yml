@@ -82,7 +82,6 @@
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
-      - BankCartridge
       - GlimmerMonitorCartridge
       - NanoTaskCartridge
       - NewsReaderCartridge

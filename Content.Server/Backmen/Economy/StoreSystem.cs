@@ -13,8 +13,6 @@ namespace Content.Server.Store.Systems;
 
 public sealed partial class StoreSystem
 {
-    [Dependency] private readonly BankManagerSystem _bankManagerSystem = default!;
-    [Dependency] private readonly IdCardSystem _idCardSystem = default!;
     [Dependency] private readonly VendingMachineSystem _vendingMachineSystem = default!;
 
     private void _PlayDeny(EntityUid uid)
@@ -55,20 +53,8 @@ public sealed partial class StoreSystem
             if (balance >= currency.Value)
             {
                 return false; // если уже достаточно валюты в автомате то нечего не делаем -_- (например рация ЯО, да-да-да, рация ЯО с покупкой с баланса банка, или баланс банка в ТК :))
-            }
-
-            if (!_idCardSystem.TryFindIdCard(buyer, out var idCardComponent))
-            {
-                _PlayDeny(uid);
-                _popup.PopupEntity(Loc.GetString("store-no-idcard"),uid);
-                return false;
-            }
-
-            if (!_bankManagerSystem.TryWithdrawFromBankAccount(idCardComponent.Owner, currency, null))
-            {
                 _PlayDeny(uid);
                 _popup.PopupEntity(Loc.GetString("store-no-money"),uid);
-                return false;
             }
         }
 

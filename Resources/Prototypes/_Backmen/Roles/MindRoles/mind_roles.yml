@@ -114,17 +114,6 @@
     roleType: Neutral
   - type: FugitiveRole
 
-# Bank
-- type: entity
-  parent: BaseMindRole
-  id: MindRoleBankMemory
-  name: Bank Memory
-  #  description: mind-role-fugitive-description
-  components:
-  - type: MindRole
-  - type: BankMemory
-
-
 #centcomm
 - type: entity
   parent: BaseMindRole
