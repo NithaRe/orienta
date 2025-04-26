@@ -2,7 +2,7 @@
   id: DiscountDansInventoryFoodSnackCheesie
   productEntity: FoodSnackCheesie
   cost:
-    SpaceCash: 20
+    Orientik: 1
   categories:
     - DiscountDansInventory
   conditions:
@@ -13,7 +13,7 @@
   id: DiscountDansInventoryFoodSnackChips
   productEntity: FoodSnackChips
   cost:
-    SpaceCash: 20
+    Orientik: 1
   categories:
     - DiscountDansInventory
   conditions:
@@ -24,7 +24,7 @@
   id: DiscountDansInventoryFoodSnackBoritos
   productEntity: FoodSnackBoritos
   cost:
-    SpaceCash: 20
+    Orientik: 1
   categories:
     - DiscountDansInventory
   conditions:
@@ -35,7 +35,7 @@
   id: DiscountDansInventoryFoodSnackPopcorn
   productEntity: FoodSnackPopcorn
   cost:
-    SpaceCash: 20
+    Orientik: 1
   categories:
     - DiscountDansInventory
   conditions:
@@ -46,7 +46,7 @@
   id: DiscountDansInventoryFoodSnackEnergy
   productEntity: FoodSnackEnergy
   cost:
-    SpaceCash: 20
+    Orientik: 1
   categories:
     - DiscountDansInventory
   conditions:

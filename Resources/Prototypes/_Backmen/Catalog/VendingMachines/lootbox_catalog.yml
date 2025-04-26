@@ -3,7 +3,7 @@
   id: LootboxT1
   productEntity: PresentRandom
   cost:
-    SpaceCash: 300
+    Orientik: 3
   categories:
     - VendingLootboxInventory
   conditions:
@@ -14,7 +14,7 @@
   id: LootboxT2
   productEntity: PresentRandomUnsafe
   cost:
-    SpaceCash: 1000
+    Orientik: 10
   categories:
     - VendingLootboxInventory
   conditions:
@@ -25,7 +25,7 @@
   id: LootboxT3
   productEntity: PresentRandomInsane
   cost:
-    SpaceCash: 10000
+    Orientik: 30
   categories:
     - VendingLootboxInventoryEmag
   conditions:

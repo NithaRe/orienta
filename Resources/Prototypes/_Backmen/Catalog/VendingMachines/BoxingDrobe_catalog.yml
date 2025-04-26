@@ -2,7 +2,7 @@
   id: BoxingDrobeInventory1
   productEntity: UniformShortsRed
   cost:
-    SpaceCash: 50
+    Orientik: 1
   categories:
     - BoxingDrobeInventory
   conditions:
@@ -13,7 +13,7 @@
   id: BoxingDrobeInventory2
   productEntity: UniformShortsRedWithTop
   cost:
-    SpaceCash: 60
+    Orientik: 1
   categories:
     - BoxingDrobeInventory
   conditions:
@@ -24,7 +24,7 @@
   id: BoxingDrobeInventory3
   productEntity: ClothingHandsGlovesBoxingRed
   cost:
-    SpaceCash: 35
+    Orientik: 1
   categories:
     - BoxingDrobeInventory
   conditions:
@@ -35,7 +35,7 @@
   id: BoxingDrobeInventory4
   productEntity: ClothingHandsGlovesBoxingBlue
   cost:
-    SpaceCash: 35
+    Orientik: 1
   categories:
     - BoxingDrobeInventory
   conditions:
@@ -46,7 +46,7 @@
   id: BoxingDrobeInventory5
   productEntity: ClothingHandsGlovesBoxingGreen
   cost:
-    SpaceCash: 35
+    Orientik: 1
   categories:
     - BoxingDrobeInventory
   conditions:
@@ -57,7 +57,7 @@
   id: BoxingDrobeInventory6
   productEntity: ClothingHandsGlovesBoxingYellow
   cost:
-    SpaceCash: 35
+    Orientik: 1
   categories:
     - BoxingDrobeInventory
   conditions:
@@ -70,7 +70,7 @@
   id: BoxingDrobeInventory7
   productEntity: ClothingUniformJumpsuitGachi
   cost:
-    SpaceCash: 100
+    Orientik: 2
   categories:
     - BoxingDrobeInventoryEmag
   conditions:
