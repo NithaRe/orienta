@@ -2,7 +2,7 @@
   id: BodaInventory
   productEntity: DrinkSodaWaterCan
   cost:
-    SpaceCash: 50
+    Orientik: 1
   categories:
     - BodaInventory
   conditions:

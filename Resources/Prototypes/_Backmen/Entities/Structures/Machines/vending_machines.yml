@@ -7,9 +7,9 @@
       categories:
         - DiscountDansInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -55,9 +55,9 @@
       categories:
         - VendingLootboxInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
       emagCategories:
         - VendingLootboxInventoryEmag
@@ -79,9 +79,9 @@
       categories:
         - CigaretteMachineInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
       emagCategories:
         - CigaretteMachineInventoryEmag
@@ -103,9 +103,9 @@
       categories:
         - RobustSoftdrinksInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
       emagCategories:
         - DrinkVendInventoryEmag
@@ -127,9 +127,9 @@
       categories:
         - RobustSoftdrinksInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
       emagCategories:
         - DrinkVendInventoryEmag
@@ -151,9 +151,9 @@
       categories:
         - RobustSoftdrinksInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
       emagCategories:
         - DrinkVendInventoryEmag
@@ -175,9 +175,9 @@
       categories:
         - DonutInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -197,9 +197,9 @@
       categories:
         - ChangInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -219,9 +219,9 @@
       categories:
         - HotDrinksMachineInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
       emagCategories:
         - HotDrinksMachineInventoryEmag
@@ -243,9 +243,9 @@
       categories:
         - BodaInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -265,9 +265,9 @@
       categories:
         - GetmoreChocolateCorpInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -287,9 +287,9 @@
       categories:
         - GetmoreChocolateCorpInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -309,9 +309,9 @@
       categories:
         - GetmoreChocolateCorpInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -331,9 +331,9 @@
       categories:
         - GetmoreChocolateCorpInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -353,9 +353,9 @@
       categories:
         - GetmoreChocolateCorpInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
@@ -375,9 +375,9 @@
       categories:
         - SpaceUpInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
       emagCategories:
         - DrinkVendInventoryEmag
@@ -399,9 +399,9 @@
       categories:
         - ColaRedInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
       emagCategories:
         - DrinkVendInventoryEmag
@@ -423,9 +423,9 @@
       categories:
         - ShamblersJuiceInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
       emagCategories:
         - DrinkVendInventoryEmag
@@ -447,9 +447,9 @@
       categories:
         - PwrGameInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
       emagCategories:
         - DrinkVendInventoryEmag
@@ -471,9 +471,9 @@
       categories:
         - DrGibbInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
       emagCategories:
         - DrinkVendInventoryEmag
@@ -495,9 +495,9 @@
       categories:
         - StarkistInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
       emagCategories:
         - DrinkVendInventoryEmag
@@ -519,9 +519,9 @@
       categories:
         - HappyHonkInventory
       currencyWhitelist:
-        - SpaceCash
+        - Orientik
       balance:
-        SpaceCash: 0
+        Orientik: 0
     - type: BuyStoreBank
       emagCategories:
         - HappyHonkInventoryEmag
@@ -560,9 +560,9 @@
     categories:
       - BoxingDrobeInventory
     currencyWhitelist:
-      - SpaceCash
+      - Orientik
     balance:
-      SpaceCash: 0
+      Orientik: 0
   - type: BuyStoreBank
     emagCategories:
       - BoxingDrobeInventoryEmag

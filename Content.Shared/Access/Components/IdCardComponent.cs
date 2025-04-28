@@ -1,5 +1,4 @@
 using Content.Shared.Access.Systems;
-using Content.Shared.Backmen.Economy;
 using Content.Shared.PDA;
 using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
@@ -44,11 +43,6 @@ public sealed partial class IdCardComponent : Component
     [AutoNetworkedField]
     public List<ProtoId<DepartmentPrototype>> JobDepartments = new();
 
-    // start-backmen: currency
-    [DataField("storedBankAccountNumber")]
-    [AutoNetworkedField]
-    public string? StoredBankAccountNumber;
-    // end-backmen: currency
     /// <summary>
     /// Determines if accesses from this card should be logged by <see cref="AccessReaderComponent"/>
     /// </summary>

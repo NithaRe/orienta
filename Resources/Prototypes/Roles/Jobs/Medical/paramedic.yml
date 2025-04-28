@@ -17,12 +17,6 @@
   - Maintenance
   extendedAccess:
   - Chemistry
-  #start-backmen: currency
-  minBankBalance: 150
-  maxBankBalance: 250
-  wageDepartment: Medical
-  wage: 35
-  #end-backmen: currency
   special:
   - !type:AddComponentSpecial
     components:

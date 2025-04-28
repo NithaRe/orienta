@@ -23,7 +23,6 @@
   rules:
   - VampiresGameRule
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - PsiScheduler #backmen: psi
   - SubGamemodesRule
   - BasicRoundstartVariation
@@ -39,7 +38,6 @@
   showInVote: false
   rules:
   - BlobGameMode
-  - WageScheduler #backmen: currency
   - PsiScheduler #backmen: psi
   - BasicRoundstartVariation
   - SubGamemodesRule
@@ -55,7 +53,6 @@
   rules:
   - XenoAgentGameMode
   - CalmStationEventScheduler
-  - WageScheduler #backmen: currency
   - PsiScheduler #backmen: psi
   - BasicRoundstartVariation
   - SubGamemodesRule
@@ -73,7 +70,6 @@
   rules:
   - FleshCult
   - CalmStationEventScheduler
-  - WageScheduler #backmen: currency
   - PsiScheduler #backmen: psi
   - BasicRoundstartVariation
   - SubGamemodesRule
@@ -92,7 +88,6 @@
   - FleshCult
   - Traitor
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - PsiScheduler #backmen: psi
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
@@ -110,7 +105,6 @@
     - Nukeops
     - FleshCult
     - BasicStationEventScheduler
-    - WageScheduler #backmen: currency
     - PsiScheduler #backmen: psi
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
@@ -130,7 +124,6 @@
     - Revolutionary
     - BasicStationEventScheduler
     - Traitor
-    - WageScheduler #backmen: currency
     - PsiScheduler #backmen: psi
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
@@ -150,7 +143,6 @@
     - Revolutionary
     - BasicStationEventScheduler
     - Nukeops
-    - WageScheduler #backmen: currency
     - PsiScheduler #backmen: psi
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
@@ -171,7 +163,6 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - PsiScheduler #backmen: psi
   - Traitor
   - BasicRoundstartVariation
@@ -193,7 +184,6 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - PsiScheduler #backmen: psi
   - Nukeops
   - BasicRoundstartVariation
@@ -213,7 +203,6 @@
     - Nukeops
     - FleshCult
     - BasicStationEventScheduler
-    - WageScheduler #backmen: currency
     - PsiScheduler #backmen: psi
     - Traitor
     - BasicRoundstartVariation
@@ -231,7 +220,6 @@
   description: survival-nukeops-description
   rules:
     - RampingStationEventScheduler
-    - WageScheduler #backmen: currency
     - PsiScheduler #backmen: psi
     - Nukeops
     - BasicRoundstartVariation
@@ -248,7 +236,6 @@
   description: changeling-gamemode-description
   showInVote: false
   rules:
-  - WageScheduler #backmen: currency
   - PsiScheduler #backmen: psi
   - Changeling
   - SubGamemodesRule
@@ -266,7 +253,6 @@
   description: secret-description
   showInVote: false
   rules:
-  - WageScheduler #backmen: currency
   - PsiScheduler #backmen: psi
   - Changeling
   - Traitor
@@ -287,7 +273,6 @@
   rules:
   - ExtendedThief
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - PsiScheduler #backmen: psi
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
@@ -306,7 +291,6 @@
   - ExtendedThief
   - Traitor
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - PsiScheduler #backmen: psi
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
@@ -324,7 +308,6 @@
   showInVote: false
   rules:
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - PsiScheduler #backmen: psi
   - BasicRoundstartVariation
   # Oh my god.
@@ -345,7 +328,6 @@
   description: calm-description
   rules:
   - CalmStationEventScheduler
-  - WageScheduler #backmen: currency
   - PsiScheduler #backmen: psi
   - CalmMeteorSwarmScheduler
   - BasicRoundstartVariation
@@ -360,7 +342,6 @@
   rules:
     - BabelTower
     - CalmStationEventScheduler
-    - WageScheduler
     - PsiScheduler #backmen: psi
     - CalmMeteorSwarmScheduler
     - BasicRoundstartVariation

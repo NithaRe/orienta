@@ -7,12 +7,6 @@
   icon: JobIconVisitor
   setPreference: false
   overrideConsoleVisibility: true
-  #start-backmen: currency
-  minBankBalance: 400
-  maxBankBalance: 500
-  wageDepartment: Civilian
-  wage: 10
-  #end-backmen: currency
   access:
   - Maintenance
   extendedAccess:

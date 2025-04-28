@@ -138,12 +138,6 @@ public sealed class EvilTwinSystem : EntitySystem
                             () =>
                             {
                                 _mindSystem.TransferTo(mindId, twinMob, true, false, mind);
-                                var bank = _economySystem.AddPlayerBank(twinMob.Value);
-                                if (bank != null)
-                                {
-                                    bank.Value.Comp.Balance = 1_000;
-                                    Dirty(bank.Value);
-                                }
                             });
 
                         var station = _stationSystem.GetOwningStation(targetUid.Value) ?? _stationSystem.GetStations()
@@ -152,16 +146,6 @@ public sealed class EvilTwinSystem : EntitySystem
                             _mindSystem.TryGetMind(targetUid.Value, out var targetMindId, out var targetMind)
                             && _roles.MindHasRole<JobRoleComponent>(targetMindId, out var currentJob))
                         {
-                            /*if (TryComp<BankMemoryComponent>(targetMindId, out var mindBank) && TryComp<BankAccountComponent>(mindBank.BankAccount, out var bankAccountComponent))
-                            {
-                                _economySystem.AddPlayerBank(twinMob.Value, bankAccountComponent);
-                                if (TryComp<BankMemoryComponent>(mindId, out var twinBank))
-                                {
-                                    twinBank.BankAccount = mindBank.BankAccount;
-                                }
-                            }*/
-
-
                             var targetSession = targetMind?.Session;
                             var targetUserId = targetMind?.UserId ?? targetMind?.OriginalOwnerUserId;
                             if (targetUserId == null)
@@ -660,7 +644,6 @@ public sealed class EvilTwinSystem : EntitySystem
     [Dependency] private readonly TargetObjectiveSystem _target = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IdentitySystem _identity = default!;
-    [Dependency] private readonly EconomySystem _economySystem = default!;
     [Dependency] private readonly ForensicsSystem _forensicsSystem = default!;
     [Dependency] private readonly SuitSensorSystem _sensor = default!;
 

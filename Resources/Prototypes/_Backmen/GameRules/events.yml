@@ -74,13 +74,6 @@
       minimumPlayers: 15
     - type: FugitiveRule
 
-- type: entity
-  id: WageScheduler
-  parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: WageSchedulerRule
-
 ## Regular station events
 - type: entity
   id: NoosphericStorm
