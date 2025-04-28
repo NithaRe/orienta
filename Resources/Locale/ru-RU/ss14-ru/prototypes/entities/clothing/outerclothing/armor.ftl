@@ -1,5 +1,5 @@
-ent-ClothingOuterArmorBase = бронежилет
-    .desc = Стандартный бронежилет типа I, обеспечивающий достойную защиту от большинства видов повреждений.
+ent-ClothingOuterArmorBase = Корпоративный силовой бронежилет
+    .desc = За основу взят бронежилет "NT" усиленный прочными пластинами.
 ent-ClothingOuterArmorBasic = { ent-ClothingOuterArmorBase }
     .desc = { ent-ClothingOuterArmorBase.desc }
 ent-ClothingOuterArmorBasicSlim = бронежилет
