@@ -1,5 +1,4 @@
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.Backmen.Cloning;
 using Content.Server.Chat.Systems;
 using Content.Server.Cloning.Components;
 using Content.Server.DeviceLinking.Systems;
@@ -71,19 +70,6 @@ public sealed partial class CloningSystem : EntitySystem
         RaiseLocalEvent(original, ref attemptEv);
         if (attemptEv.Cancelled && !settings.ForceCloning)
             return false; // cannot clone, for example due to the unrevivable trait
-
-        // start-backmen: cloning
-        var genetics = new CloningSpawnEvent(clonePod,original)
-        {
-            Proto = speciesPrototype.Prototype
-        };
-        RaiseLocalEvent(ref genetics);
-        clone = coords == null ? Spawn(genetics.Proto ?? speciesPrototype.Prototype) : Spawn(genetics.Proto ?? speciesPrototype.Prototype, coords.Value);
-        if (!genetics.IsHandleAppearance)
-        {
-            _humanoidSystem.CloneAppearance(original, clone.Value);
-        }
-        // end-backmen: cloning
 
         var componentsToCopy = settings.Components;
 

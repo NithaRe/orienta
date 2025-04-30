@@ -168,14 +168,6 @@ namespace Content.Server.Cloning
             if (mind.UserId.HasValue == false || mind.Session == null)
                 return;
 
-            // start-backmen: MetempsychoticMachine
-            var fail = scannerComp.CloningFailChanceMultiplier;
-            if (HasComp<Backmen.Cloning.MetempsychoticMachineComponent>(cloningPodUid))
-            {
-                fail = 0;
-            }
-            // end-backmen: MetempsychoticMachine
-
             if (_cloningPodSystem.TryCloning(cloningPodUid, body.Value, (mindId, mind), cloningPod, scannerComp.CloningFailChanceMultiplier))
                 _adminLogger.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(uid)} successfully cloned {ToPrettyString(body.Value)}.");
         }

@@ -121,7 +121,6 @@
   - type: GuideHelp
     guides:
     - MinorAntagonists
-  - type: PotentialPsionic
   - type: Grammar
     attributes:
       gender: male

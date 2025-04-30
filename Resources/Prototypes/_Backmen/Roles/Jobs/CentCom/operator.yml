@@ -40,13 +40,7 @@
         - type: NpcFactionMember
           factions:
             - CentralCommand
-        - type: Psionic
-        - type: DispelPower
         - type: AntagImmune
-  minBankBalance: 400
-  maxBankBalance: 600
-  wageDepartment: CentCom
-  wage: 75
 
 
 

@@ -4,7 +4,6 @@ using Content.Server.Magic;
 using Content.Server.Backmen.Species.Shadowkin.Components;
 using Content.Server.Backmen.Species.Shadowkin.Events;
 using Content.Shared.Actions;
-using Content.Shared.Backmen.Abilities.Psionics;
 using Content.Shared.Backmen.Species.Shadowkin.Components;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage.Systems;
@@ -63,7 +62,7 @@ public sealed class ShadowkinTeleportSystem : EntitySystem
 
         // Don't activate abilities if handcuffed
         // TODO: Something like the Psionic Headcage to disable powers for Shadowkin
-        if (HasComp<HandcuffComponent>(args.Performer) || HasComp<PsionicInsulationComponent>(args.Performer))
+        if (HasComp<HandcuffComponent>(args.Performer))
             return;
 
         if(!_interaction.InRangeUnobstructed(args.Performer, args.Target, 0,

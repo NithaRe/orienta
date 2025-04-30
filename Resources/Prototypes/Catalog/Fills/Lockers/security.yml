@@ -19,8 +19,6 @@
       - id: ClothingOuterHardsuitWarden
       - id: HoloprojectorSecurity
       - id: ClothingEyesHudSecurity
-      - id: ClothingHeadCage # backmen
-        amount: 2
       - id: BookSpaceLaw
       - id: ClothingHeadHatCapWardenAlt # Corvax-SecFashion
       - id: ClothingOuterCoatWardenAlt # Corvax-SecFashion
@@ -56,8 +54,6 @@
       - id: DoorRemoteArmory
       - id: HoloprojectorSecurity
       - id: ClothingEyesHudSecurity
-      - id: ClothingHeadCage # backmen
-        amount: 2
       - id: BookSpaceLaw
       - id: ClothingBackpackWarden # Corvax-SecFashion
       - id: BoxBodyBagPrisoner # Backmen-AdvancedBodyBags
@@ -130,7 +126,6 @@
         prob: 0.4
       - id: MedkitBurnFilled
         prob: 0.4
-      - id: ClothingHeadCage # backmen
       - id: ClothingHeadsetAltBrigmedic # backmen
       - id: BoxBodyBagPrisoner # Backmen-AdvancedBodyBags
 
@@ -153,8 +148,6 @@
       - id: DrinkDetFlask
       - id: ClothingHandsGlovesForensic
       - id: BookBusido # Corvax-Books
-      - id: ClothingHeadCage # backmen
-        amount: 1
       - id: RubberStampDetective
       - id: HoloprojectorSecurity
       - id: BoxEvidenceMarkers

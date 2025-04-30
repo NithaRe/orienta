@@ -127,24 +127,6 @@
   position: 5,4
 
 - type: technology
-  id: PsionicCountermeasures
-  name: research-technology-psionic-countermeasures
-  icon:
-    sprite: Backmen/Clothing/Head/Hats/cage.rsi
-    state: icon
-  discipline: Scientific
-  tier: 2
-  cost: 4500
-  recipeUnlocks:
-  - ClothingHeadHelmetInsulated
-  - InsulativeHeadcage
-  - ShellSoulbreaker
-  - AntiPsychicKnife
-  technologyPrerequisites:
-  - AnomalousResearch
-  position: 5,2
-
-- type: technology
   id: Teleportation
   name: research-technology-teleportation
   icon:

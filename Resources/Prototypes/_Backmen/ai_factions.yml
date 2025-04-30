@@ -64,16 +64,6 @@
     - InteQHostile
 
 - type: npcFaction
-  id: GlimmerMonster # Crew hostile psionic
-  hostile:
-    - PsionicInterloper
-
-- type: npcFaction
-  id: PsionicInterloper # Crew aligned psionic
-  hostile:
-    - GlimmerMonster
-
-- type: npcFaction
   id: SuperZloy
   hostile:
     - Dragon
@@ -234,7 +224,6 @@
   - MalfunctioningRobot # Backmen-Factions-START
   - Blob
   - Flesh
-  - GlimmerMonster
   - SuperZloy
   - ShadowkinDarkHostile
   - Britan
@@ -252,7 +241,6 @@
   - MalfunctioningRobot # Backmen-Factions-START
   - Blob
   - Flesh
-  - GlimmerMonster
   - SuperZloy
   - ShadowkinDarkHostile
   - AiTurret

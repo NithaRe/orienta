@@ -14,21 +14,6 @@
     stock: 1
 
 - type: listing
-  id: vmpDispelPower
-  name: store-vmpDispelPower-name
-  description: store-vmpDispelPower-desc
-  raiseProductEventOnUser: true
-  productEvent: !type:VampireStoreEvent
-    buyType: DispelPower
-  cost:
-    BloodEssence: 5
-  categories:
-  - VapmireT1
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
-
-- type: listing
   id: vmpRegenPower
   name: store-vmpRegenPower-name
   description: store-vmpRegenPower-desc

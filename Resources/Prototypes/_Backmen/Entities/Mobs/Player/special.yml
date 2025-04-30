@@ -15,8 +15,6 @@
       layers:
         - state: eyeball
           shader: unshaded
-    - type: Dispellable
-    - type: Psionic
     - type: MindContainer
     - type: Clickable
     - type: InteractionOutline
@@ -39,19 +37,16 @@
       baseSprintSpeed: 8
       baseWalkSpeed: 5
     - type: MovementIgnoreGravity
-    - type: PsionicallyInvisible
     - type: InputMover
     - type: Appearance
     - type: Eye
       drawFov: false
       visMask:
         - Normal
-        - PsionicInvisibility
         - DarkSwapInvisibility
     - type: Input
       context: "ghost"
     - type: Examiner
-    - type: TelegnosticProjection
     - type: Stealth
       lastVisibility: 0.33
     - type: Visibility

@@ -2,12 +2,10 @@
 - type: latheRecipePack
   id: BackmenProtolathe
   recipes:
-  - InsulativeHeadcage
   - HandTeleporter1
   - EnergyDomeDirectionalTurtle
   - ClothingHeadHelmetInsulated
   - CoreSilver
-  - AntiPsychicKnife
   - WeaponPlasmaCutter # Goobstation
   - PKAUpgradeDamage # Lavaland Change
   - PKAUpgradeRange # Lavaland Change

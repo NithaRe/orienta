@@ -26,8 +26,6 @@
   special:
   - !type:AddComponentSpecial
     components:
-      - type: PsionicBonusChance
-        multiplier: 3
       - type: NpcFactionMember
         factions:
           - CentralCommand

@@ -39,13 +39,7 @@
         - type: NpcFactionMember
           factions:
             - CentralCommand
-        - type: PsionicBonusChance
-          multiplier: 3
         - type: AntagImmune
-  minBankBalance: 100
-  maxBankBalance: 250
-  wageDepartment: CentCom
-  wage: 75
 
 - type: startingGear
   id: CentComPrivateOfficerGear

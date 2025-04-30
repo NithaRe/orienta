@@ -4,7 +4,6 @@ research-technology-integrated-huds = Integrated HUDs
 research-technology-magnetic-boots = Magnetic boots
 research-technology-quantum-magnetic-boots = Quantum magnetic boots
 research-technology-teleportation = Teleportation
-research-technology-psionic-countermeasures = Psionic countermeasures
 
 research-technology-anomalous-research-machines = Research machines
 research-technology-anomaly-research-advanced-machines = Advanced research machines

@@ -181,16 +181,6 @@
   categories:
   - UplinkPsionic
 
-- type: listing
-  id: UplinkAntiPsychicKnife
-  name: uplink-AntiPsychicKnife-name
-  description: uplink-AntiPsychicKnife-desc
-  productEntity: AntiPsychicKnife
-  cost:
-    Telecrystal: 2
-  categories:
-  - UplinkPsionic
-
 # Weapon and mask
 - type: listing
   id: UplinkBrassknuckles

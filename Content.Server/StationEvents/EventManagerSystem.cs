@@ -251,23 +251,6 @@ public sealed class EventManagerSystem : EntitySystem
             return false;
         }
 
-        // start-backmen: Glimmer
-        if (prototype.TryGetComponent<Backmen.StationEvents.Components.GlimmerEventComponent>(
-                out var glimmerEventComponent,
-                _componentFactory))
-        {
-            var glimmer = EntityManager.SystemOrNull<Shared.Backmen.Psionics.Glimmer.GlimmerSystem>()?.Glimmer ?? 0;
-            var glimmerOn = _configurationManager.GetCVar(Shared.Backmen.CCVar.CCVars.GlimmerEnabled);
-
-            if(!glimmerOn)
-                return false;
-            if(glimmer < glimmerEventComponent.MinimumGlimmer)
-                return false;
-            if(glimmer > glimmerEventComponent.MaximumGlimmer)
-                return false;
-        }
-        // end-backmen: Glimmer
-
         if (playerCount < stationEvent.MinimumPlayers)
         {
             return false;

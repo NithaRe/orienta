@@ -97,14 +97,4 @@
       emergencyLightColor: Aqua
       forceEnableEmergencyLights: true
       shuttleTime: 1200
-    white:
-      announcement: alert-level-white-announcement
-      sound:
-        path: /Audio/Backmen/Misc/new-style-alerts/white_code_new_style.ogg
-        params:
-          volume: -2
-      color: White
-      emergencyLightColor: White
-      forceEnableEmergencyLights: true
-      shuttleTime: 600
 #backmen end

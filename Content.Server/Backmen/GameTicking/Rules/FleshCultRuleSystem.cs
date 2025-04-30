@@ -14,7 +14,6 @@ using Content.Server.Shuttles.Components;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Server.Store.Components;
-using Content.Shared.Backmen.Abilities.Psionics;
 using Content.Shared.Backmen.CCVar;
 using Content.Shared.Backmen.Flesh;
 using Content.Shared.GameTicking;
@@ -388,14 +387,6 @@ public sealed class FleshCultRuleSystem : GameRuleSystem<FleshCultRuleComponent>
         storeComp.BuySuccessSound = fleshCultRule.BuySuccesSound;
 
         EnsureComp<FleshCultistComponent>(mind.OwnedEntity.Value);
-
-        if (_prototypeManager.TryIndex<RadioChannelPrototype>(FleshChannel, out var fleshChannel))
-        {
-            var hiveMind = EnsureComp<PsionicComponent>(mind.OwnedEntity.Value);
-            hiveMind.Channel = FleshChannel;
-            hiveMind.Removable = false;
-            hiveMind.ChannelColor = fleshChannel.Color;
-        }
 
         _mindSystem.TryAddObjective(mindId, mind, CreateFleshHeartObjective);
         _mindSystem.TryAddObjective(mindId, mind, FleshCultistSurvivalObjective);

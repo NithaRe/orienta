@@ -119,9 +119,6 @@
     molsPerSecondPerUnitMass: 0.0005
   - type: Speech
     speechVerb: LargeMob
-  - type: PotentialPsionic
-    chance: -2
-  - type: Psionic
     removable: false
   - type: NightVision
     isToggle: true

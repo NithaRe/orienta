@@ -4,7 +4,6 @@
   name: anomaly
   description: An impossible object. Should you be standing this close to it?
   components:
-  - type: GlimmerSource
   - type: Anomaly
     offset: 0, 0.15
     pulseSound:

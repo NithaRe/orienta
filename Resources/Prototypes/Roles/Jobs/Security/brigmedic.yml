@@ -21,9 +21,5 @@
     - Maintenance
     - External
   special:
-    - !type:AddComponentSpecial
-      components:
-        - type: PsionicBonusChance
-          flatBonus: 0.025
     - !type:AddImplantSpecial
       implants: [ MindShieldImplant ]

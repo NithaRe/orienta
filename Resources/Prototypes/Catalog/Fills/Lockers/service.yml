@@ -53,8 +53,6 @@
       # yes, I'm using this as an excuse to not have to do extra work.
       - id: DrinkMilkCarton
         amount: 2
-      - id: AntiPsychicKnife # backmen
-        prob: 0.05
       - id: DrinkSoyMilkCarton
 
 - type: entity

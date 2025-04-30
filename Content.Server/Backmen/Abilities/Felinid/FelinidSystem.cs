@@ -13,7 +13,7 @@ using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Medical;
 using Content.Server.Nutrition.Components;
 using Content.Server.Popups;
-using Content.Shared.Backmen.Psionics.Events;
+using Content.Shared.Backmen.Abilities.Felinid;
 using Content.Shared.Chemistry.EntitySystems;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
