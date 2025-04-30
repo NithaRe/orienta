@@ -78,14 +78,6 @@ internal sealed class ChatManager : IChatManager
                 _consoleHost.ExecuteCommand($"whisper \"{CommandParsing.Escape(str)}\"");
                 break;
 
-            // start-backmen: telepathic
-
-            case ChatSelectChannel.Telepathic:
-                _consoleHost.ExecuteCommand($"tsay \"{CommandParsing.Escape(str)}\"");
-                break;
-
-            // end-backmen: telepathic
-
             default:
                 throw new ArgumentOutOfRangeException(nameof(channel), channel, null);
         }
