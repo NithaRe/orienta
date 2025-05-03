@@ -162,8 +162,6 @@
               Quantity: 10
             - ReagentId: Necrosol
               Quantity: 10
-            - ReagentId: Ectoplasm
-              Quantity: 5
     - type: GuideHelp
       guides:
       - MinorAntagonists

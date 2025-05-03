@@ -75,7 +75,6 @@
       Male: MaleFelinid
       Female: FemaleFelinid
       Unsexed: MaleFelinid
-  - type: Felinid
   - type: Respirator
     damage:
       types:

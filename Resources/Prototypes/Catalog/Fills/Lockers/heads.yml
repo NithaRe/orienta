@@ -54,7 +54,6 @@
     - id: SpaceCash1000
     - id: WeaponDisabler
 #    - id: ClothingEyesGlassesCommand # Backmen-CaptainDrobe
-    - id: Eftpos # backmen
     # Corvax-Resprite-Start
 #    - id: ClothingHeadCaptainHat # Backmen-CaptainDrobe
 #    - id: ClothingOuterCoatCaptain # Backmen-CaptainDrobe

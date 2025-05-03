@@ -70,7 +70,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: Eftpos # backmen
       - id: FlashlightSeclite
         prob: 0.8
       - id: WeaponDisabler

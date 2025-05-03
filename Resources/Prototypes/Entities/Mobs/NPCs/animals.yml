@@ -1743,7 +1743,6 @@
   id: MobMouse
   description: Squeak!
   components:
-  - type: FelinidFood
   - type: Body
     prototype: Mouse
   - type: GhostRole
