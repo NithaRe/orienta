@@ -144,8 +144,6 @@
     - TemporaryBlindness
     - Pacified
     - StaminaModifier
-    - PsionicsDisabled
-    - PsionicallyInsulated
     - SeeAll
     - Flashed
     - RadiationProtection
@@ -224,7 +222,6 @@
   - type: MobPrice
     price: 1500 # Kidnapping a living person and selling them for cred is a good move.
     deathPenalty: 0.01 # However they really ought to be living and intact, otherwise they're worth 100x less.
-  - type: PotentialPsionic
   - type: LayingDown # backmen: LayingDown
   - type: Tag
     tags:

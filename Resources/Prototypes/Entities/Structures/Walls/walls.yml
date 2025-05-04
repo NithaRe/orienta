@@ -1458,7 +1458,6 @@
     - type: Icon
       sprite: Structures/Magic/forcewall.rsi
       state: forcewall
-    - type: Dispellable
 
 - type: entity
   parent: BaseWall

@@ -24,7 +24,6 @@
         - WallLayer
         hard: false
   - type: Portal
-  - type: Dispellable
 
 - type: entity
   id: PortalRed

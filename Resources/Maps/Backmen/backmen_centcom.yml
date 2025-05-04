@@ -30793,14 +30793,6 @@ entities:
     - type: Transform
       pos: 87.5,80.5
       parent: 1
-- proto: ComputerWage
-  entities:
-  - uid: 3334
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 93.5,69.5
-      parent: 1
 - proto: ContrabassInstrument
   entities:
   - uid: 3348

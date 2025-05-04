@@ -23,7 +23,6 @@
   rules:
   - VampiresGameRule
   - BasicStationEventScheduler
-  - PsiScheduler #backmen: psi
   - SubGamemodesRule
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
@@ -38,7 +37,6 @@
   showInVote: false
   rules:
   - BlobGameMode
-  - PsiScheduler #backmen: psi
   - BasicRoundstartVariation
   - SubGamemodesRule
   - CalmMeteorSwarmScheduler
@@ -53,7 +51,6 @@
   rules:
   - XenoAgentGameMode
   - CalmStationEventScheduler
-  - PsiScheduler #backmen: psi
   - BasicRoundstartVariation
   - SubGamemodesRule
   - CalmMeteorSwarmScheduler
@@ -70,7 +67,6 @@
   rules:
   - FleshCult
   - CalmStationEventScheduler
-  - PsiScheduler #backmen: psi
   - BasicRoundstartVariation
   - SubGamemodesRule
   - CalmMeteorSwarmScheduler
@@ -88,7 +84,6 @@
   - FleshCult
   - Traitor
   - BasicStationEventScheduler
-  - PsiScheduler #backmen: psi
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
   - LavalandStormScheduler # Lavaland Change
@@ -105,7 +100,6 @@
     - Nukeops
     - FleshCult
     - BasicStationEventScheduler
-    - PsiScheduler #backmen: psi
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
     - LavalandStormScheduler # Lavaland Change
@@ -124,7 +118,6 @@
     - Revolutionary
     - BasicStationEventScheduler
     - Traitor
-    - PsiScheduler #backmen: psi
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
     - LavalandStormScheduler # Lavaland Change
@@ -143,7 +136,6 @@
     - Revolutionary
     - BasicStationEventScheduler
     - Nukeops
-    - PsiScheduler #backmen: psi
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
     - LavalandStormScheduler # Lavaland Change
@@ -163,7 +155,6 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
-  - PsiScheduler #backmen: psi
   - Traitor
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
@@ -184,7 +175,6 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
-  - PsiScheduler #backmen: psi
   - Nukeops
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
@@ -203,7 +193,6 @@
     - Nukeops
     - FleshCult
     - BasicStationEventScheduler
-    - PsiScheduler #backmen: psi
     - Traitor
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
@@ -220,7 +209,6 @@
   description: survival-nukeops-description
   rules:
     - RampingStationEventScheduler
-    - PsiScheduler #backmen: psi
     - Nukeops
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
@@ -236,7 +224,6 @@
   description: changeling-gamemode-description
   showInVote: false
   rules:
-  - PsiScheduler #backmen: psi
   - Changeling
   - SubGamemodesRule
   - BasicStationEventScheduler
@@ -253,7 +240,6 @@
   description: secret-description
   showInVote: false
   rules:
-  - PsiScheduler #backmen: psi
   - Changeling
   - Traitor
   - SubGamemodesRule
@@ -273,7 +259,6 @@
   rules:
   - ExtendedThief
   - BasicStationEventScheduler
-  - PsiScheduler #backmen: psi
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
   - LavalandStormScheduler # Lavaland Change
@@ -291,7 +276,6 @@
   - ExtendedThief
   - Traitor
   - BasicStationEventScheduler
-  - PsiScheduler #backmen: psi
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
   - LavalandStormScheduler # Lavaland Change
@@ -308,7 +292,6 @@
   showInVote: false
   rules:
   - BasicStationEventScheduler
-  - PsiScheduler #backmen: psi
   - BasicRoundstartVariation
   # Oh my god.
   - KesslerSyndromeScheduler
@@ -328,7 +311,6 @@
   description: calm-description
   rules:
   - CalmStationEventScheduler
-  - PsiScheduler #backmen: psi
   - CalmMeteorSwarmScheduler
   - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
@@ -342,7 +324,6 @@
   rules:
     - BabelTower
     - CalmStationEventScheduler
-    - PsiScheduler #backmen: psi
     - CalmMeteorSwarmScheduler
     - BasicRoundstartVariation
 #    - SpaceTrafficControlEventScheduler

@@ -54,13 +54,10 @@
     - id: SpaceCash1000
     - id: WeaponDisabler
 #    - id: ClothingEyesGlassesCommand # Backmen-CaptainDrobe
-    - id: Eftpos # backmen
     # Corvax-Resprite-Start
 #    - id: ClothingHeadCaptainHat # Backmen-CaptainDrobe
 #    - id: ClothingOuterCoatCaptain # Backmen-CaptainDrobe
     # Corvax-Resprite-End
-    - id: AntiPsychicKnife  # backmen
-    - id: ClothingHeadCage # backmen
     - id: HandheldReinforcementCentCom # backmen
 #    - id: ClothingEyesGlassesCommand # Backmen - Because dublicate (56)???
 
@@ -145,8 +142,6 @@
     - id: RubberStampDenied
     - id: RubberStampHop
     - id: WeaponDisabler
-    - id: AntiPsychicKnife # backmen
-    - id: ClothingHeadCage # backmen
     - id: ClothingOuterCoatHOP # Corvax-Resprite
     - id: PrinterDocFlatpack # Corvax-Printer
     - id: ClothingEyesHudCommand
@@ -178,8 +173,6 @@
     - id: RCD
     - id: RCDAmmo
     - id: RubberStampCE
-    - id: AntiPsychicKnife # backmen
-    - id: ClothingHeadCage # backmen
     - id: PrinterDocFlatpack # Corvax-Printer
     - id: SupermatterFlatpack # backmen
 
@@ -239,8 +232,6 @@
     - id: MedicalTechFabCircuitboard
     - id: MedkitFilled
     - id: RubberStampCMO
-    - id: AntiPsychicKnife # backmen
-    - id: ClothingHeadCage # backmen
     - id: PrinterDocFlatpack # Corvax-Printer
     - id: FlatpackMetempsychoticMachine # backmen
     - id: MedicalBiofabMachineBoard # backmen
@@ -298,8 +289,6 @@
     - id: ProtolatheMachineCircuitboard
     - id: ResearchComputerCircuitboard
     - id: RubberStampRd
-    - id: AntiPsychicKnife # backmen
-    - id: ClothingHeadCage # backmen
     - id: PrinterDocFlatpack # Corvax-Printer
     - id: FlatpackOracle # backmen
     - id: FlatpackSophie # backmen
@@ -362,8 +351,6 @@
     - id: SecurityTechFabCircuitboard
     - id: GunsmithTechFabCircuitboard #backmen
     - id: WeaponDisabler
-    - id: AntiPsychicKnife # backmen
-    - id: ClothingHeadCage # backmen
     - id: PrinterDocFlatpack # Corvax-Printer
     - id: WantedListCartridge
     - id: DrinkHosFlask

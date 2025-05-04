@@ -4,7 +4,6 @@ research-technology-integrated-huds = Интегрированные интер�
 research-technology-magnetic-boots = Наноразмерный магнитизм
 research-technology-quantum-magnetic-boots = Квантовый магнитизм
 research-technology-teleportation = Телепортация
-research-technology-psionic-countermeasures = Псионические контрмеры
 
 research-technology-anomalous-research-machines = Оборудование аномалистики
 research-technology-anomaly-research-advanced-machines = Продвинутое оборудование аномалистики

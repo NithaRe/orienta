@@ -1,6 +1,5 @@
 ﻿using Content.Server.Antag.Components;
 using Content.Server.Backmen.Blob.NPC.BlobPod;
-using Content.Server.Backmen.Cloning.Components;
 using Content.Server.Backmen.Language;
 using Content.Server.GameTicking;
 using Content.Server.Ghost.Roles.Components;
@@ -52,9 +51,7 @@ public sealed class LanguageTest
 
                 EntityUid ent;
                 if (
-                    entProto.TryGetComponent<GhostRoleAntagSpawnerComponent>(out _, compFactory) ||
-                    entProto.TryGetComponent<CloningAppearanceComponent>(out _, compFactory)
-                    )
+                    entProto.TryGetComponent<GhostRoleAntagSpawnerComponent>(out _, compFactory))
                 {
                     continue;
                 }

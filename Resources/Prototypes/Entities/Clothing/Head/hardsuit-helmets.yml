@@ -454,8 +454,6 @@
         Slash: 0.4
         Piercing: 0.4
         Heat: 0.4
-  - type: TinfoilHat
-    destroyOnFry: false
 
 #Blood-red Medic Hardsuit
 - type: entity
@@ -490,8 +488,6 @@
         Heat: 0.4
         Radiation: 0.6
         Caustic: 0.6
-  - type: TinfoilHat
-    destroyOnFry: false
 
 #Syndicate Elite Hardsuit
 - type: entity
@@ -529,8 +525,6 @@
         Slash: 0.5
         Piercing: 0.5
         Heat: 0.4
-  - type: TinfoilHat
-    destroyOnFry: false
 
 #Syndicate Commander Hardsuit
 - type: entity
@@ -563,8 +557,6 @@
         Slash: 0.4
         Piercing: 0.4
         Heat: 0.4
-  - type: TinfoilHat
-    destroyOnFry: false
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
@@ -597,8 +589,6 @@
         Slash: 0.25
         Piercing: 0.25
         Heat: 0.25
-  - type: TinfoilHat
-    destroyOnFry: false
 
 #Wizard Hardsuit
 - type: entity
@@ -631,7 +621,6 @@
         Slash: 0.5
         Piercing: 0.5
         Heat: 0.5
-  - type: HeadCage
 
 #Organic Space Suit
 - type: entity

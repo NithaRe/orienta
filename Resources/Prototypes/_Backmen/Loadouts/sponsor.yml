@@ -6,18 +6,6 @@
     back:
     - PowerDrill
 
-#Анти-пси
-- type: loadout
-  id: TinfoilBkmLoadout
-  equipment:
-    head: ClothingHeadTinfoil
-
-- type: loadout
-  id: AntiPsychicKnifeBkm
-  storage:
-    back:
-    - AntiPsychicKnife
-
 #БДСМ
 - type: loadout
   id: ClothingUniformJumpsuitGachiBkm

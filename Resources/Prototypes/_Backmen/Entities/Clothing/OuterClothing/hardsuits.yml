@@ -279,8 +279,6 @@
         Piercing: 0.5
         Heat: 0.4
   - type: PNV
-  - type: TinfoilHat
-    destroyOnFry: false
 
 - type: entity
   parent: ClothingOuterHardsuitSyndieElite

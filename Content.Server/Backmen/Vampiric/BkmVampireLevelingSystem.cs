@@ -7,7 +7,6 @@ using Content.Server.Popups;
 using Content.Server.Store.Systems;
 using Content.Shared.Actions;
 using Content.Shared.Administration.Logs;
-using Content.Shared.Backmen.Abilities.Psionics;
 using Content.Shared.Backmen.Vampiric;
 using Content.Shared.Backmen.Vampiric.Components;
 using Content.Shared.Damage;
@@ -264,21 +263,6 @@ public sealed class BkmVampireLevelingSystem : EntitySystem
                 break;
             case VampireStoreType.NoSlip:
                 EnsureComp<NoSlipComponent>(ent);
-                break;
-            case VampireStoreType.DispelPower:
-                EnsureComp<DispelPowerComponent>(ent);
-                break;
-            case VampireStoreType.IgnitePower:
-                EnsureComp<PyrokinesisPowerComponent>(ent);
-                break;
-            case VampireStoreType.RegenPower:
-                EnsureComp<PsionicRegenerationPowerComponent>(ent);
-                break;
-            case VampireStoreType.ZapPower:
-                EnsureComp<NoosphericZapPowerComponent>(ent);
-                break;
-            case VampireStoreType.PsiInvisPower:
-                EnsureComp<PsionicInvisibilityPowerComponent>(ent);
                 break;
         }
     }

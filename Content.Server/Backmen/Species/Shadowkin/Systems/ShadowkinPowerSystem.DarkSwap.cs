@@ -7,8 +7,6 @@ using Content.Server.Backmen.Species.Shadowkin.Components;
 using Content.Server.Backmen.Species.Shadowkin.Events;
 using Content.Server.Stunnable;
 using Content.Shared.Actions;
-using Content.Shared.Backmen.Abilities.Psionics;
-using Content.Shared.Backmen.Psionics.Events;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage.Systems;
@@ -46,7 +44,6 @@ public sealed class ShadowkinDarkSwapSystem : EntitySystem
     [Dependency] private readonly EyeSystem _eye = default!;
     [Dependency] private readonly StunSystem _stunSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    private EntityQuery<PsionicsDisabledComponent> _activePsionicsDisabled;
     private EntityQuery<StaminaComponent> _activeStamina;
 
     public override void Initialize()
@@ -62,16 +59,8 @@ public sealed class ShadowkinDarkSwapSystem : EntitySystem
         SubscribeLocalEvent<ShadowkinDarkSwappedComponent, ComponentShutdown>(OnInvisShutdown);
         SubscribeLocalEvent<ShadowkinDarkSwappedComponent, MoveEvent>(OnMoveInInvis);
         SubscribeLocalEvent<ShadowkinDarkSwappedComponent, DamageChangedEvent>(OnDamageInInvis);
-        SubscribeLocalEvent<ShadowkinDarkSwappedComponent, DispelledEvent>(OnDispelled);
 
-        _activePsionicsDisabled = GetEntityQuery<PsionicsDisabledComponent>();
         _activeStamina = GetEntityQuery<StaminaComponent>();
-    }
-
-    private void OnDispelled(Entity<ShadowkinDarkSwappedComponent> ent, ref DispelledEvent args)
-    {
-        RemCompDeferred<ShadowkinDarkSwappedComponent>(ent);
-        _stunSystem.TryParalyze(ent, TimeSpan.FromSeconds(5), true);
     }
 
     private void OnDamageInInvis(Entity<ShadowkinDarkSwappedComponent> ent, ref DamageChangedEvent args)
@@ -132,7 +121,7 @@ public sealed class ShadowkinDarkSwapSystem : EntitySystem
         var q = EntityQueryEnumerator<StaminaComponent, ShadowkinDarkSwappedComponent, StatusEffectsComponent>();
         while (q.MoveNext(out var uid, out var stamina, out var comp, out var statusEffectsComponent))
         {
-            if (stamina.Critical || _activePsionicsDisabled.HasComponent(uid))
+            if (stamina.Critical)
             {
                 RemCompDeferred<ShadowkinDarkSwappedComponent>(uid);
                 _stunSystem.TryParalyze(uid, TimeSpan.FromSeconds(5), true, statusEffectsComponent);
@@ -157,7 +146,7 @@ public sealed class ShadowkinDarkSwapSystem : EntitySystem
 
         // Don't activate abilities if handcuffed
         // TODO: Something like the Psionic Headcage to disable powers for Shadowkin
-        if (HasComp<HandcuffComponent>(args.Performer) || HasComp<PsionicInsulationComponent>(args.Performer))
+        if (HasComp<HandcuffComponent>(args.Performer))
             return;
 
 
