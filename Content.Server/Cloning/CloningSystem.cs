@@ -56,7 +56,7 @@ public sealed partial class CloningSystem : EntitySystem
     /// </summary>
     public bool TryCloning(EntityUid original, MapCoordinates? coords, ProtoId<CloningSettingsPrototype> settingsId, Entity<CloningPodComponent>? clonePod, [NotNullWhen(true)] out EntityUid? clone)
     {
-        clone = null;
+        clone = default!;
         if (!_prototype.TryIndex(settingsId, out var settings))
             return false; // invalid settings
 
